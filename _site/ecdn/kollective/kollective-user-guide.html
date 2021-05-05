@@ -1,0 +1,1120 @@
+﻿<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="このトピックでは、VOD と Live コンテンツを Kollective シンジケーターアプリケーションと同期する方法について説明します。">
+  
+  <title>Kollective eCDN ユーザーガイド</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Video_Cloud_Logo.svg" alt="製品ロゴ" style="max-height: 100px;max-width: 232px;"/></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">言語の選択</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="サポート"/> サポートへのお問い合わせ</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="システムステータス"/> システムステータス</a></span> <br/>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">ホーム</a></li>
+      
+      
+      
+      <li class="breadcrumb-item"><a href="/ecdn/kollective/">Kollective </a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Kollective eCDN ユーザーガイド</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+            <div class="col-sm-3 left-side-bar">
+        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+          <option value="">Brightcove ブのその他のドキュメント</option>
+          
+            
+              <option value="https://support.brightcove.com">ドキュメントホーム</option>
+            
+          
+            
+              <option value="https://audience.support.brightcove.com">Brightcove Audience</option>
+            
+          
+            
+              <option value="https://beacon.support.brightcove.com">Brightcove ブビーコン</option>
+            
+          
+            
+              <option value="https://campaign.support.brightcove.com">Brightcove ブキャンペーン</option>
+            
+          
+            
+              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+            
+          
+            
+              <option value="https://live.support.brightcove.com">Brightcove ブ・ライブ</option>
+            
+          
+            
+              <option value="https://gallery.support.brightcove.com">Brightcove ブギャラリー</option>
+            
+          
+            
+              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+            
+          
+            
+              <option value="https://social.support.brightcove.com">Brightcove ブソーシャル</option>
+            
+          
+            
+              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+            
+          
+            
+              <option value="https://player.support.brightcove.com">Brightcove ブのプレーヤー開発</option>
+            
+          
+            
+              <option value="https://apis.support.brightcove.com">Video CloudプラットフォームAPI</option>
+            
+          
+            
+              <option value="https://sdks.support.brightcove.com">ビデオクラウドデバイス SDK</option>
+            
+          
+            
+              <option value="https://integrations.support.brightcove.com">統合および CMS コネクタ</option>
+            
+          
+            
+              <option value="https://general.support.brightcove.com">ビデオクラウドの一般情報</option>
+            
+          
+            
+              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+            
+          
+        </select>
+
+        <nav class="sidenav" id="side_nav">
+          
+            
+            <h5><a href="/index.html">ホーム</a></h5>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/general/index.html">一般情報<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/general/cms-integration-training-videos.html">CMS 統合トレーニングビデオ</a></li>
+                  
+                
+                  
+                    <li><a href="/general/integrating-your-cms-video-cloud.html">CMSとビデオクラウドの統合</a></li>
+                  
+                
+                  
+                    <li><a href="/general/embedding-brightcove-players-cms.html">CMS へのBrightcove ブプレーヤーの埋め込み</a></li>
+                  
+                
+                  
+                    <li><a href="/general/embedding-brightcove-page-experiences-cms.html">CMS へのページ内エクスペリエンスの埋め込み</a></li>
+                  
+                
+                  
+                    <li><a href="/general/debugging-network-and-api-connection-issues-cms-and-dam-integrations.html">ネットワークおよび API 接続の問題のデバッグ</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/wordpress/index.html">ワードプレス<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/wordpress/getting-started-brightcove-video-connect-wordpress-cms.html">Brightcove ブビデオコネクトのご利用開始</a></li>
+                  
+                
+                  
+                    <li><a href="/wordpress/wordpress-brightcove-connector-configuration.html">構成</a></li>
+                  
+                
+                  
+                    <li><a href="/wordpress/wordpress-brightcove-connector-frequently-asked-questions.html">よくある質問</a></li>
+                  
+                
+                  
+                    <li><a href="/wordpress/wordpress-brightcove-connector-installation.html">インストール</a></li>
+                  
+                
+                  
+                    <li><a href="/wordpress/wordpress-brightcove-connector-using-connector.html">コネクタの使用</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/drupal/index.html">Drupal <strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/drupal/getting-started-brightcove-video-connect-drupal-cms.html">Drupal用コネクタの使用を開始する</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-8-brightcove-connector-configuration.html">Drupal 8-構成</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-8-brightcove-connector-content-management.html">Drupal 8-コンテンツ管理</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-8-brightcove-connector-embedding-content.html">Drupal 8-コンテンツの埋め込み</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-8-brightcove-connector-installation.html">Drupal 8-コネクタのインストール</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-7-brightcove-connector-configuration-and-usage.html">Drupal 7-構成と使用方法</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-7-brightcove-connector-installation.html">Drupal 7-インストール</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/adobe/index.html"><strong>アドビ+ </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/adobe/getting-started-brightcove-video-connect-adobe-experience-manager.html">AEM 用コネクタの使用を開始する</a></li>
+                  
+                
+                  
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-configuration.html">構成</a></li>
+                  
+                
+                  
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-installation.html">インストール</a></li>
+                  
+                
+                  
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-overview.html">概要</a></li>
+                  
+                
+                  
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-using-connector.html">コネクタの使用</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/sitecore/index.html">Sitecore <strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/sitecore/getting-started-brightcove-video-connect-sitecore-experience-platform.html">サイトコア用コネクタの使用開始</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/sharepoint/index.html">SharePoint <strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/sharepoint/getting-started-brightcove-video-connect-sharepoint.html">Sharepoint 用コネクタの使用を開始する</a></li>
+                  
+                
+                  
+                    <li><a href="/sharepoint/sharepoint-brightcove-connector-4041-using-connector.html">コネクタの使用</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/ecommerce/index.html"><strong>eコマース+ </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ecommerce/salesforce/index.html">Salesforce コマースクラウド<strong> + </strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-installation.html">Salesforce コマースクラウド:インストール</a></li>
+                        
+                        <li><a href="/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-user-guide.html">Salesforce コマースクラウド:ユーザーガイド</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ecommerce/adobe-magento-commerce/index.html">Adobe Magento <strong>コマース+ </strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ecommerce/adobe-magento-commerce/installation-guide.html">インストールガイド</a></li>
+                        
+                        <li><a href="/ecommerce/adobe-magento-commerce/user-guide.html">ユーザーガイド</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/ecdn/index.html">eCDN <strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ecdn/kollective/index.html">Kollective <strong> + </strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ecdn/kollective/kollective-deployment-guide.html">Kollective eCDN デプロイメントガイド</a></li>
+                        
+                        <li><a href="/ecdn/kollective/kollective-user-guide.html">Kollective eCDN ユーザーガイド</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ecdn/peer5/index.html">ピア5 <strong> + </strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ecdn/peer5/brightcove-with-peer5-integration.html">Brightcove ブと Peer5 インテグレーション</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ecdn/ramp/index.html">ランプ<strong> + </strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ecdn/ramp/getting-started-ramp-omnicache-and-video-cloud.html">ランプ OmniCache とビデオクラウドの開始</a></li>
+                        
+                        <li><a href="/ecdn/ramp/getting-started-ramp-multicast-and-video-cloud.html">Ramp マルチキャスト + とビデオクラウドの開始</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/web-conferencing/index.html">ウェブ会議<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/web-conferencing/host-zoom-conference-brightcove-live.html">Brightcove ブライブでズームカンファレンス</a></li>
+                  
+                
+                  
+                    <li><a href="/web-conferencing/host-cisco-webex-conference-brightcove-live.html">シスコの Webex カンファレンス、Brightcove ブライブへ</a></li>
+                  
+                
+                  
+                    <li><a href="/web-conferencing/host-avaya-conference-brightcove-live.html">Brightcove ブライブのアバイアカンファレンス</a></li>
+                  
+                
+                  
+                    <li><a href="/web-conferencing/host-inxpo-live.html">Brightcove ブライブでのINXPO イベント</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/support/index.html"><strong>サポート+ </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    
+                  
+                
+                  
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">Brightcove ブのシステムステータスページの表示</a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">営業へのお問い合わせ</a></li>
+                  
+                
+                  
+                    <li><a href="/support/opening-case-with-brightcove-support.html">サポートケースを開く</a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="ナビゲーションメニュー"/></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">ページコンテンツ</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="新しいタブで開く" style="margin-top:4em;width: 1.5em;"/></a>
+
+
+
+  
+    
+
+
+<h1>Kollective eCDN ユーザーガイド</h1>
+<article class="bcls-article">
+  <summary>このトピックでは、VOD と Live コンテンツを Kollective シンジケーターアプリケーションと同期する方法について説明します。</summary>
+
+<section class="bcls-section">
+<h2 id="Overview">概要</h2>
+
+<p>
+  Brightcove ブでは、<a href="https://kollective.com/ECDN-solutions/"> Kollective eCDN </a>を使用して、ビデオオンデマンド (VOD) イベントとBrightcove ブのライブイベントをBrightcove ブプレーヤーに配信する統合を作成しました。
+</p>
+<p>
+  この統合は、次の 2 つの部分で構成されています。
+</p>
+<ul>
+  <li>
+    <p>
+      Brightcove から Kollective に動画を同期するために使用されるバックエンドアプリケーション
+    </p>
+  </li>
+  <li>
+    <p>
+      Kollective eCDN を使用して動画アセットを再生できる Brightcove Player 用の Kollective プラグイン
+    </p>
+  </li>
+</ul>
+
+<p>
+  このトピックでは、コンテンツの同期に使用される Kollective のサーバー側アプリについて説明します。
+</p>
+
+</section>
+
+<section class="bcls-section">
+<h2 id="Process_flow">プロセスフロー</h2>
+  <p>
+    VOD コンテンツまたはライブコンテンツを再生するには、次のプロセスフローを使用します。
+  </p>
+  <ol class="bcls-tasklist">
+    <li>
+      <p>
+        シンジケーターアプリで VOD アセットまたはライブアセットを選択します。
+      </p>
+    </li>
+    <li>
+      <p>
+        シンジケーターアプリを使用して、コンテンツアセットを Kollective に同期します。
+      </p>
+    </li>
+    <li>
+      <p>
+        Kollective プラグインで Brightcove Player をウェブページに埋め込み、コンテンツを再生します。
+      </p>
+    </li>
+
+  </ol>
+
+  <figure class="bcls-figure"><img class="bcls-image--no-border" alt="ワークフロー" src="/assets/images/kollective/app/workflow.png"/>
+    <figcaption class="bcls-caption--image">ワークフロー</figcaption>
+  </figure>
+</section>
+
+<section class="bcls-section">
+<h2 id="Getting_started">入門編</h2>
+<p>
+  コンテンツを同期するには、次の手順を実行します。
+</p>
+<ol class="bcls-tasklist-restart">
+  <li>
+    <p>
+      まだ実行していない場合は、<a href="/ecdn/kollective/kollective-deployment-guide.html"> Kollective eCDN デプロイメントガイドのセットアップ手順に従ってください</a>。
+    </p>
+  </li>
+  <li>
+    <a href="#Reviewing_user_roles">ユーザーロールの確認</a>
+  </li>
+  <li>
+    <p>VOD とライブコンテンツを同期するには、以下を参照してください。</p>
+    <ul>
+      <li>
+        <a href="#Synchronizing_videos">ビデオの同期</a>
+      </li>
+      <li>
+        <a href="#Synchronizing_live_events">ライブイベントの同期</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#Checking_syndicator_logs">シンジケーターログの確認</a>
+  </li>
+  <li>
+    <a href="#Embedding_the_player_code">プレーヤーコードの埋め込み</a>
+  </li>
+</ol>
+</section>
+
+<section class="bcls-section">
+<h2 id="Reviewing_user_roles">ユーザーロールの確認</h2>
+<p>
+  Kollective バックエンドシンジケーターアプリケーションは、2 つの異なるユーザーロールをサポートします。
+</p>
+<ul>
+  <li>
+    <p>
+      管理者ロール-管理者ユーザーは、他のユーザー (管理者ロールとユーザーロール) の作成、会社設定へのアクセス、シンジケーターツールの実行、同期ログの確認を行うことができます。彼らはシンジケーターアプリのすべてのセクションにアクセスできます。
+    </p>
+  </li>
+  <li>
+    <p>
+      ユーザーロール-これらのユーザーは、シンジケーターツールを実行して同期ログを確認できますが、会社の設定を編集することはできません。ユーザーは、<strong>ビデオシンジケーター、ライブイベントシンジケーター</strong>、<strong>シンジケーターログにアクセスできますが</strong>、「<strong>ユーザーの管理</strong>」ページまたは「<strong>設定</strong>」ページにはアクセスできません。
+    </p>
+  </li>
+</ul>
+
+<h3>管理者ユーザー</h3>
+<p>
+  管理者ユーザーは、他のユーザー（管理者ロールとユーザーロール）の作成、会社設定へのアクセス、シンジケーターツールの実行、同期ログの確認を行うことができます。
+</p>
+<h4>アカウント設定</h4>
+<p>
+  管理者ユーザーは、<strong> [設定</strong> ] セクションにアクセスしてアカウント情報を設定できます。アカウント設定を管理するには、次の手順に従います。
+</p>
+<ol class="bcls-tasklist-restart">
+  <li>
+    <p>
+      Kollective シンジケーターアプリに管理者ユーザーとしてログインします。
+    </p>
+  </li>
+  <li>
+    <p>
+      左側のナビゲーションで、[ <strong>設定</strong> ] を選択します。
+    </p>
+    <!-- <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Policy key" src="/assets/images/kollective/policy-key.png" />
+      <figcaption class="bcls-caption--image">Policy key</figcaption>
+    </figure> -->
+  </li>
+  <li>
+    <p>
+      [ <strong>設定] </strong>セクションで、会社のアカウントに関する情報を入力できます。
+    </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="設定" src="/assets/images/kollective/app/settings.png"/>
+      <figcaption class="bcls-caption--image">設定</figcaption>
+    </figure>
+    <p>フィールドの詳細は次のとおりです。</p>
+    <ul>
+      <li>
+        <p>
+          <strong>テナント名</strong> -会社名
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>説明</strong> -あなたの説明
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>連絡先名</strong> -連絡先名
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>連絡先の電子メール</strong> -連絡先メールアドレス
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>Brightcove ブのアカウント ID </strong> -Brightcove ブの動画クラウドスタジオから入手できます
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>Brightcove ブのクライアントキー</strong> -Brightcove ブの動画クラウドスタジオから入手できます
+        </p>
+        <p>
+          <strong>Brightcove ブのクライアント秘密</strong> -Brightcove ブの動画クラウドスタジオから入手できます
+        </p>
+        <p>
+          Kollective がBrightcove ブのコンテンツにアクセスするには、クライアントの認証情報を入力する必要があります。Video Cloud Studio の管理セクションで生成できます。次の権限を選択する必要があります。
+        </p>
+        <ul>
+          <li>
+            CMS:プレイリストの読み取り、プレイリストの読み取り/書き込み、ビデオ読み取り、ビデオの読み取り/書き
+          </li>
+          <li>
+            動的取り込み:ファイルの作成、プッシュ
+          </li>
+          <li>
+            プレイヤー:読み取り、読み取り/書き込み
+          </li>
+          <li>
+            SSAI:読み取り、読み取り/書き込み
+          </li>
+        </ul>
+        <p>
+          Brightcove クライアントキーとクライアントシークレットの取得の詳細については、以下を参照してください。
+        </p>
+        <ul>
+          <li>
+            <a href="https://studio.support.brightcove.com/admin/managing-api-authentication-credentials.html">API 認証資格情報の管理</a>
+          </li>
+          <li>
+            または、このツールを使用できます。<a href="https://apis.support.brightcove.com/oauth/code-samples/oauth-api-sample-create-client-credentials.html">クライアント認証情報の作成</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          <strong>Brightcove ブライブ API キー</strong> -Brightcove ブのサポートに連絡してこれを入手してください
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>Kollective テナント ID </strong> -アカウントマネージャからこれを取得します
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>Kollective サービストークン</strong> -アカウントマネージャーからこれを取得します
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>自動同期を許可</strong> -特定の時間にすべてのコンテンツを同期する場合は、これをチェックします。それ以外の場合は、オフのままにします。詳細については、次の手順を参照してください。
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>
+      [ <strong>自動同期を許可</strong> ] を選択すると、次の詳細が表示されます。
+    </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="自動同期化" src="/assets/images/kollective/app/auto-sync.png"/>
+      <figcaption class="bcls-caption--image">自動同期化</figcaption>
+    </figure>
+    <p>これにより、構成可能な時間間隔で同期ジョブを自動的に実行できます。</p>
+    <ul>
+      <li>
+        ジョブを実行する時間間隔を入力します。(例:ジョブを 1 時間ごとに実行します)。
+      </li>
+      <li>
+        ジョブを初めて実行する時刻を選択します。
+      </li>
+      <li>
+        <strong>ジョブを実行するたびに同期する最大ビデオ数を入力します</strong>。
+      </li>
+      <li>
+        [ <strong> Run Job Now </strong> ] ボタンをクリックすると、すぐにジョブを実行できます。
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>
+      [ <strong>更新</strong> ] ボタンを選択して、設定を保存します。
+    </p>
+  </li>
+</ol>
+
+<h4>ユーザーを管理する</h4>
+<p>
+  管理者アカウントを使用すると、ユーザーを作成、編集、削除できます。
+</p>
+<ol class="bcls-tasklist-restart">
+  <li>
+    <p>
+      Kollective シンジケーターアプリに管理者ユーザーとしてログインします。
+    </p>
+  </li>
+  <li>
+    <p>
+      左側のナビゲーションで、[ <strong>ユーザーの管理</strong> ] を選択します。
+    </p>
+  </li>
+  <li>
+    <p>
+      会社アカウント内のすべてのユーザーのリストが表示されます。
+    </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="ユーザーを一覧表示" src="/assets/images/kollective/app/manage-users.png"/>
+      <figcaption class="bcls-caption--image">ユーザーを一覧表示</figcaption>
+    </figure>
+  </li>
+  </ol>
+
+  <h4>ユーザーの追加</h4>
+  <p>
+    管理者ロールまたはユーザーロールを持つユーザーを追加できます。
+  </p>
+  <ol class="bcls-tasklist-restart">
+    <li>
+      <p>
+        「<strong>ユーザーの管理</strong>」ページで、「<strong>ユーザーの追加</strong>」ボタンを選択します。
+      </p>
+    </li>
+    <li>
+      <p>
+        管理者ロールまたはユーザロールを持つユーザを作成するための情報を入力します。
+      </p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="ユーザーの作成" src="/assets/images/kollective/app/create-user.png"/>
+        <figcaption class="bcls-caption--image">ユーザーの作成</figcaption>
+      </figure>
+    </li>
+  </ol>
+
+  <h4>ユーザーの編集</h4>
+  <p>
+    既存のユーザーの情報を編集できます。
+  </p>
+  <ol class="bcls-tasklist-restart">
+    <li>
+      <p>
+        「<strong>ユーザーの管理</strong>」ページで、リストからユーザーを選択します。
+      </p>
+    </li>
+    <li>
+      <p>
+        [ <strong>電子メール</strong> ] 以外のユーザフィールドのいずれも更新できます。
+      </p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="ユーザーの編集" src="/assets/images/kollective/app/edit-user.png"/>
+        <figcaption class="bcls-caption--image">ユーザーの編集</figcaption>
+      </figure>
+    </li>
+  </ol>
+
+  <h4>ユーザーの削除</h4>
+  <p>
+    ユーザーリストからユーザーを削除できます。
+  </p>
+  <ol class="bcls-tasklist-restart">
+    <li>
+      <p>
+        「<strong>ユーザーの管理</strong>」ページで、リストからユーザーを選択します（ログインしたユーザーを除く）。
+      </p>
+    </li>
+    <li>
+      <p>
+        [ <strong>削除</strong> ] ボタンを選択します。
+      </p>
+    </li>
+    <li>
+      <p>
+        [ <strong>ユーザーの削除</strong> ] ダイアログで、[ <strong>削除</strong> ] ボタンを選択します。
+      </p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="ユーザーの削除" src="/assets/images/kollective/app/delete-user.png"/>
+        <figcaption class="bcls-caption--image">ユーザーの削除</figcaption>
+      </figure>
+    </li>
+  </ol>
+</section>
+
+<section class="bcls-section">
+<h2 id="Synchronizing_videos">ビデオの同期</h2>
+<p>
+  現在のアカウントで動画を Brightcove から Kollective に同期します。
+</p>
+<h3>動画リスト</h3>
+<ol class="bcls-tasklist-restart">
+   <li>
+    <p>
+      左側のナビゲーションで [ <strong>コンテンツシンジケーター</strong> ] を選択し、[ <strong>ビデオシンジケーター</strong> ] を選択します。
+    </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="ビデオを同期する" src="/assets/images/kollective/app/sync-videos.png"/>
+        <figcaption class="bcls-caption--image">ビデオを同期する</figcaption>
+      </figure>
+      <p>
+        Video Cloud アカウント内のすべての動画の一覧が表示され、最後に追加/更新された動画が上に表示されます。
+      </p>
+  </li>
+  <li>
+    <p>
+      ビデオリストで、[ <strong>すべて]、[同期]、[同期済み]、</strong>または [ <strong>非同期</strong> ] のビデオをフィルタできます。
+    </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="ビデオをフィルタする" src="/assets/images/kollective/app/sync-video-filter.png"/>
+        <figcaption class="bcls-caption--image">ビデオをフィルタする</figcaption>
+      </figure>
+  </li>
+  <li>
+    <p>
+      リストから 1 つまたは複数の動画を選択し、[ <strong>同期</strong> ] ボタンを選択して、Brightcove ブから Kollective に同期します。
+    </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="複数の動画を同期する" src="/assets/images/kollective/app/sync-multiple-videos.png"/>
+        <figcaption class="bcls-caption--image">複数の動画を同期する</figcaption>
+      </figure>
+  </li>
+</ol>
+
+<h3>Video Detail</h3>
+<ol class="bcls-tasklist-restart">
+   <li>
+    <p>
+      一覧から任意のビデオを選択して、ビデオの詳細ページを表示します。
+    </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="ビデオの詳細" src="/assets/images/kollective/app/video-details.png"/>
+        <figcaption class="bcls-caption--image">ビデオの詳細</figcaption>
+      </figure>
+  </li>
+  <li>
+    <p>
+      ビデオの詳細ページから、次の操作を実行できます。
+    </p>
+    <ul>
+      <li>
+        ビデオを同期する
+      </li>
+      <li>
+        ビデオのステータスを更新する
+      </li>
+      <li>
+        動画を削除する
+      </li>
+    </ul>
+  </li>
+</ol>
+</section>
+
+<section class="bcls-section">
+<h2 id="Synchronizing_live_events">ライブイベントの同期</h2>
+<p>
+  現在のアカウントでライブイベントをBrightcove ブから Kollective に同期します。
+</p>
+<h3>動画リスト</h3>
+<ol class="bcls-tasklist-restart">
+   <li>
+    <p>
+      左側のナビゲーションで [ <strong>コンテンツシンジケーター</strong> ] を選択し、[ <strong>ライブイベント] [シンジケーター</strong> ] を選択します。
+    </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="ライブイベントを同期する" src="/assets/images/kollective/app/sync-live.png"/>
+        <figcaption class="bcls-caption--image">ライブイベントを同期する</figcaption>
+      </figure>
+      <p>
+        Video Cloud アカウント内のすべてのライブイベントのリストが表示され、最後に追加/更新された動画が上に表示されます。
+      </p>
+  </li>
+  <li>
+    <p>
+      ライブイベントリストで、<strong>すべて、ライブ、スタンバイ、</strong><strong>または完了したライブイベントをフィルタリングできます</strong>。
+    </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="ライブイベントをフィルタする" src="/assets/images/kollective/app/sync-live-filter.png"/>
+        <figcaption class="bcls-caption--image">ライブイベントをフィルタする</figcaption>
+      </figure>
+  </li>
+  <li>
+    <p>
+      リストから 1 つまたは複数のライブイベントを選択し、[ <strong>同期</strong> ] ボタンを選択して、Brightcove ブから Kollective に同期します。
+    </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="複数のイベントを同期する" src="/assets/images/kollective/app/sync-live-events.png"/>
+        <figcaption class="bcls-caption--image">複数のイベントを同期する</figcaption>
+      </figure>
+  </li>
+</ol>
+
+<h3>ライブイベントの詳細</h3>
+<ol class="bcls-tasklist-restart">
+   <li>
+    <p>
+      リストでライブイベントを選択すると、詳細ページが表示されます。
+    </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="ライブイベントの詳細" src="/assets/images/kollective/app/live-details.png"/>
+        <figcaption class="bcls-caption--image">ライブイベントの詳細</figcaption>
+      </figure>
+  </li>
+  <li>
+    <p>
+      ライブイベントの詳細ページでは、次の操作を実行できます。
+    </p>
+    <ul>
+      <li>
+        ライブイベントを同期する
+      </li>
+      <li>
+        ライブイベントステータスの更新
+      </li>
+      <li>
+        ライブイベントを削除する
+      </li>
+    </ul>
+  </li>
+</ol>
+</section>
+
+<section class="bcls-section">
+<h2 id="Checking_syndicator_logs">シンジケーターログの確認</h2>
+<p>
+  シンジケーターログは、アカウントのビデオとライブイベントの同期に関する成功、エラー、警告の詳細を提供します。
+</p>
+<ol class="bcls-tasklist-restart">
+   <li>
+    <p>
+      左側のナビゲーションで、[ <strong>シンジケーターログ</strong> ] を選択します。
+    </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="シンジケーターログ" src="/assets/images/kollective/app/syndicator-logs.png"/>
+        <figcaption class="bcls-caption--image">シンジケーターログ</figcaption>
+      </figure>
+      <p>
+        現在のアカウントの同期ログの一覧が、最新のアカウントの一番上に表示されます。
+      </p>
+  </li>
+  <li>
+    <p>
+      同期ログの一覧で、[ <strong>すべて]、[エラー]、[情報]、</strong>または [ <strong>警告</strong> ] をフィルタできます。
+    </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="シンジケーターログのフィルタリング" src="/assets/images/kollective/app/syndicator-log-filter.png"/>
+        <figcaption class="bcls-caption--image">シンジケーターログのフィルタリング</figcaption>
+      </figure>
+  </li>
+</ol>
+</section>
+
+<section class="bcls-section">
+<h2 id="Embedding_the_player_code">プレーヤーコードの埋め込み</h2>
+<p>
+  プレーヤーと関連するコンテンツアセットを Web ページに埋め込む方法に変更はありません。
+</p>
+<ol class="bcls-tasklist-restart">
+  <li>
+    <p>
+      Brightcove ブの動画クラウドスタジオで、Media モジュールに移動します。
+    </p>
+  </li>
+  <li>
+    <p>
+      使用するビデオを選択し、[ <strong>公開して埋め込む</strong> ] ボタンを選択します。
+    </p>
+  </li>
+  <li>
+    <p>
+      Kollective プラグインを使用するように設定されているプレーヤーを選択します。
+    </p>
+  </li>
+  <li>
+    <p>
+      <strong>Standard</strong>または<strong>Advanced</strong>コードのいずれかをコピーして、Webページに追加します。
+    </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="埋め込みコード" src="/assets/images/kollective/embed-code.png"/>
+      <figcaption class="bcls-caption--image">埋め込みコード</figcaption>
+    </figure>
+    <aside class="bcls-aside bcls-aside--warning">デフォルトでは、プレヤートークンは、コンテンツを同期してから 6 時間後に有効期限が切れます。有効期限が切れると、コンテンツを再生できなくなります。有効期限を変更するには、Brightcove ブサポートにお問い合わせください。</aside>
+  </li>
+</ol>
+</section>
+
+</article>
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">ページコンテンツ</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<footer class="bcls-footer" role="contentinfo">  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Brightcove ブサポート</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">システムステータス</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">サポートへのお問い合わせ</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">ドキュメンテーション</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>トレーニング</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">オンラインコース</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">コースに登録する</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Brightcove University</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">Brightcove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">お問合せ</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">プライバシー</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">利用規約</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>

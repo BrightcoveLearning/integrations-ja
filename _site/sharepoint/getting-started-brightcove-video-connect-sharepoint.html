@@ -1,0 +1,1280 @@
+﻿<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>SharePoint 向けBrightcove ブビデオコネクトの使用を開始する</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Video_Cloud_Logo.svg" alt="製品ロゴ" style="max-height: 100px;max-width: 232px;"/></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">言語の選択</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="サポート"/> サポートへのお問い合わせ</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="システムステータス"/> システムステータス</a></span> <br/>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">ホーム</a></li>
+      
+      
+      
+      <li class="breadcrumb-item"><a href="/sharepoint/">SharePointの</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">SharePoint 向けBrightcove ブビデオコネクトの使用を開始する</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+            <div class="col-sm-3 left-side-bar">
+        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+          <option value="">Brightcove ブのその他のドキュメント</option>
+          
+            
+              <option value="https://support.brightcove.com">ドキュメントホーム</option>
+            
+          
+            
+              <option value="https://audience.support.brightcove.com">Brightcove Audience</option>
+            
+          
+            
+              <option value="https://beacon.support.brightcove.com">Brightcove ブビーコン</option>
+            
+          
+            
+              <option value="https://campaign.support.brightcove.com">Brightcove ブキャンペーン</option>
+            
+          
+            
+              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+            
+          
+            
+              <option value="https://live.support.brightcove.com">Brightcove ブ・ライブ</option>
+            
+          
+            
+              <option value="https://gallery.support.brightcove.com">Brightcove ブギャラリー</option>
+            
+          
+            
+              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+            
+          
+            
+              <option value="https://social.support.brightcove.com">Brightcove ブソーシャル</option>
+            
+          
+            
+              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+            
+          
+            
+              <option value="https://player.support.brightcove.com">Brightcove ブのプレーヤー開発</option>
+            
+          
+            
+              <option value="https://apis.support.brightcove.com">Video CloudプラットフォームAPI</option>
+            
+          
+            
+              <option value="https://sdks.support.brightcove.com">ビデオクラウドデバイス SDK</option>
+            
+          
+            
+              <option value="https://integrations.support.brightcove.com">統合および CMS コネクタ</option>
+            
+          
+            
+              <option value="https://general.support.brightcove.com">ビデオクラウドの一般情報</option>
+            
+          
+            
+              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+            
+          
+        </select>
+
+        <nav class="sidenav" id="side_nav">
+          
+            
+            <h5><a href="/index.html">ホーム</a></h5>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/general/index.html">一般情報<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/general/cms-integration-training-videos.html">CMS 統合トレーニングビデオ</a></li>
+                  
+                
+                  
+                    <li><a href="/general/integrating-your-cms-video-cloud.html">CMSとビデオクラウドの統合</a></li>
+                  
+                
+                  
+                    <li><a href="/general/embedding-brightcove-players-cms.html">CMS へのBrightcove ブプレーヤーの埋め込み</a></li>
+                  
+                
+                  
+                    <li><a href="/general/embedding-brightcove-page-experiences-cms.html">CMS へのページ内エクスペリエンスの埋め込み</a></li>
+                  
+                
+                  
+                    <li><a href="/general/debugging-network-and-api-connection-issues-cms-and-dam-integrations.html">ネットワークおよび API 接続の問題のデバッグ</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/wordpress/index.html">ワードプレス<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/wordpress/getting-started-brightcove-video-connect-wordpress-cms.html">Brightcove ブビデオコネクトのご利用開始</a></li>
+                  
+                
+                  
+                    <li><a href="/wordpress/wordpress-brightcove-connector-configuration.html">構成</a></li>
+                  
+                
+                  
+                    <li><a href="/wordpress/wordpress-brightcove-connector-frequently-asked-questions.html">よくある質問</a></li>
+                  
+                
+                  
+                    <li><a href="/wordpress/wordpress-brightcove-connector-installation.html">インストール</a></li>
+                  
+                
+                  
+                    <li><a href="/wordpress/wordpress-brightcove-connector-using-connector.html">コネクタの使用</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/drupal/index.html">Drupal <strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/drupal/getting-started-brightcove-video-connect-drupal-cms.html">Drupal用コネクタの使用を開始する</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-8-brightcove-connector-configuration.html">Drupal 8-構成</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-8-brightcove-connector-content-management.html">Drupal 8-コンテンツ管理</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-8-brightcove-connector-embedding-content.html">Drupal 8-コンテンツの埋め込み</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-8-brightcove-connector-installation.html">Drupal 8-コネクタのインストール</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-7-brightcove-connector-configuration-and-usage.html">Drupal 7-構成と使用方法</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-7-brightcove-connector-installation.html">Drupal 7-インストール</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/adobe/index.html"><strong>アドビ+ </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/adobe/getting-started-brightcove-video-connect-adobe-experience-manager.html">AEM 用コネクタの使用を開始する</a></li>
+                  
+                
+                  
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-configuration.html">構成</a></li>
+                  
+                
+                  
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-installation.html">インストール</a></li>
+                  
+                
+                  
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-overview.html">概要</a></li>
+                  
+                
+                  
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-using-connector.html">コネクタの使用</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/sitecore/index.html">Sitecore <strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/sitecore/getting-started-brightcove-video-connect-sitecore-experience-platform.html">サイトコア用コネクタの使用開始</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/sharepoint/index.html">SharePoint <strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/sharepoint/getting-started-brightcove-video-connect-sharepoint.html">Sharepoint 用コネクタの使用を開始する</a></li>
+                  
+                
+                  
+                    <li><a href="/sharepoint/sharepoint-brightcove-connector-4041-using-connector.html">コネクタの使用</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/ecommerce/index.html"><strong>eコマース+ </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ecommerce/salesforce/index.html">Salesforce コマースクラウド<strong> + </strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-installation.html">Salesforce コマースクラウド:インストール</a></li>
+                        
+                        <li><a href="/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-user-guide.html">Salesforce コマースクラウド:ユーザーガイド</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ecommerce/adobe-magento-commerce/index.html">Adobe Magento <strong>コマース+ </strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ecommerce/adobe-magento-commerce/installation-guide.html">インストールガイド</a></li>
+                        
+                        <li><a href="/ecommerce/adobe-magento-commerce/user-guide.html">ユーザーガイド</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/ecdn/index.html">eCDN <strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ecdn/kollective/index.html">Kollective <strong> + </strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ecdn/kollective/kollective-deployment-guide.html">Kollective eCDN デプロイメントガイド</a></li>
+                        
+                        <li><a href="/ecdn/kollective/kollective-user-guide.html">Kollective eCDN ユーザーガイド</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ecdn/peer5/index.html">ピア5 <strong> + </strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ecdn/peer5/brightcove-with-peer5-integration.html">Brightcove ブと Peer5 インテグレーション</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ecdn/ramp/index.html">ランプ<strong> + </strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ecdn/ramp/getting-started-ramp-omnicache-and-video-cloud.html">ランプ OmniCache とビデオクラウドの開始</a></li>
+                        
+                        <li><a href="/ecdn/ramp/getting-started-ramp-multicast-and-video-cloud.html">Ramp マルチキャスト + とビデオクラウドの開始</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/web-conferencing/index.html">ウェブ会議<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/web-conferencing/host-zoom-conference-brightcove-live.html">Brightcove ブライブでズームカンファレンス</a></li>
+                  
+                
+                  
+                    <li><a href="/web-conferencing/host-cisco-webex-conference-brightcove-live.html">シスコの Webex カンファレンス、Brightcove ブライブへ</a></li>
+                  
+                
+                  
+                    <li><a href="/web-conferencing/host-avaya-conference-brightcove-live.html">Brightcove ブライブのアバイアカンファレンス</a></li>
+                  
+                
+                  
+                    <li><a href="/web-conferencing/host-inxpo-live.html">Brightcove ブライブでのINXPO イベント</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/support/index.html"><strong>サポート+ </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    
+                  
+                
+                  
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">Brightcove ブのシステムステータスページの表示</a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">営業へのお問い合わせ</a></li>
+                  
+                
+                  
+                    <li><a href="/support/opening-case-with-brightcove-support.html">サポートケースを開く</a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="ナビゲーションメニュー"/></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">ページコンテンツ</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="新しいタブで開く" style="margin-top:4em;width: 1.5em;"/></a>
+
+
+
+  
+    
+
+
+<article class="bcls-article">
+<h1>SharePoint 向けBrightcove ブビデオコネクトの使用を開始する</h1>
+<summary>このトピックでは、SharePoint 向けBrightcove ブビデオコネクトの概要について説明します。</summary>
+<section class="bcls-section">
+  <h2 id="introduction">はじめに</h2>
+  <table class="bcls-table">
+    <thead class="bcls-table__head">
+      <tr>
+        <th scope="col">バージョン</th>
+        <th scope="col">ドキュメント</th>
+        <th scope="col">ダウンロード</th>
+        <th scope="col">互換性に関する注意事項</th>
+      </tr>
+    </thead>
+    <tbody class="bcls-table__body">
+      <tr>
+        <td>4.1.2.0</td>
+        <td><a href="/sharepoint/sharepoint-brightcove-connector-4041-using-connector.html">ドキュメンテーション</a></td>
+        <td><a href="https://github.com/BrightcoveOS/SharePoint-Connector/releases/tag/4.1.2.0">プラグインとソース* </a></td>
+        <td><p>SharePoint 2016/2019 &nbsp;オンプレミス、SharePoint 2016/2019 オンライン (Office 365)、Brightcove ブ CMS &amp; DI API、Brightcove ブ HTML5 プレーヤー</p>
+          <ul>
+            <li>修正: &nbsp;特定の状況でのエクスペリエンスの問題。</li>
+          </ul></td>
+      </tr>
+      <tr>
+        <td>4.0.1.0</td>
+        <td><a href="/sharepoint/sharepoint-brightcove-connector-4041-using-connector.html">ドキュメンテーション</a></td>
+        <td><a href="https://github.com/BrightcoveOS/SharePoint-Connector/releases/tag/v4.0.1.0">プラグインとソース* </a></td>
+        <td><p>SharePoint 2013/2016 オンプレミス、SharePoint 2016 オンライン (Office 365)、Brightcove ブ CMS &amp; DI API、Brightcove ブ HTML5 プレーヤー</p>
+          <ul>
+            <li>Brightcove 動画、プレイリスト、ページ内エクスペリエンスを埋め込むための新しい AppPart を利用できます。ネイティブ埋め込みアイコンを使用する代わりに、モダンエクスペリエンスページに Brightcove プレーヤーを埋め込むために使用できます。</li>
+            <li>Brightcove API 用のプロキシサーバが不要になり、セットアッププロセスが簡素化されます。</li>
+          </ul></td>
+      </tr>
+      <tr>
+        <td>3.0.2.0</td>
+        <td>4.0.x.x リリースにスキップ</td>
+        <td>終え</td>
+        <td><p>SharePoint 2013/2016 オンプレミス、SharePoint 2016 オンライン (Office 365)、Brightcove ブ CMS &amp; DI API、Brightcove ブ HTML5 プレーヤー</p>
+          <ul>
+            <li>&nbsp;<a rel="nofollow" href="https://www.brightcove.com/en/blog/2017/05/think-outside-box-brightcoves-new-page-experiences-video">ページはめ込みエクスペリエンス</a>&nbsp;ビデオポータルの公開をサポートします</li>
+            <li>プッシュベースの動的取り込みを使用。ファイアウォールの内側にある SharePoint サーバーからのビデオのアップロードをサポート</li>
+            <li>ハードコードされたプロファイルではなく、Brightcove ブのデフォルトのインジェストプロファイルを使用します</li>
+            <li>改良されたUX</li>
+            <li>シンプルなインストールプロセス</li>
+          </ul></td>
+      </tr>
+      <tr>
+        <td>2.0.2.66</td>
+        <td><a href="#contents">トレーニングドキュメント</a></td>
+        <td>終え</td>
+        <td>SharePoint 2013/2016 オンプレミス、SharePoint 2016 オンライン (Office 365)、Brightcove ブ CMS &amp; DI API、Brightcove ブ HTML5 プレーヤー</td>
+      </tr>
+      <tr>
+        <td>1.1.2.8</td>
+        <td><a href="https://files.brightcove.com/bc-sharepoint-training.pdf">トレーニングドキュメント</a></td>
+        <td>終え</td>
+        <td>SharePoint 2013 オンプレミスのみ、Brightcove ブメディア API、Brightcove ブのレガシーフラッシュ SmartPlayer &nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <p>* © 2019 &nbsp;Brightcove ブ</p>
+    <p>Apache ライセンス、バージョン 2.0 (以下「ライセンス」) の下でライセンスされています。ライセンスに従う場合を除き、このファイルを使用することはできません。お客様は<a style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214);" href="https://www.apache.org/licenses/LICENSE-2.0"> http://www.apache.org/licenses/LICENSE-2.0 </a>でライセンスのコピーを入手できます。&nbsp;適用法により要求される場合または書面による合意がない限り、本ライセンスに基づいて配布されるソフトウェアは、明示または黙示を問わず、いかなる種類の保証または条件もなく、「現状のまま」配布されます。ライセンスに基づく権限および制限を管理する特定の言語については、ライセンスを参照してください。</p>
+  </div>
+  <p>このコネクタに関するヘルプについては、<a href="https://files.brightcove.com/BrightcoveConnectforSharePointSupportWorksheet.docx">このワークシートに記入し</a>、Brightcove ブのカスタマーサポートへのサポートチケットを記載してください。</p>
+</section>
+<section class="bcls-section">
+  <h2 id="contents">目次</h2>
+  <ul>
+    <li><a href="#installing">SharePoint 用のBrightcove ブビデオコネクトをインストールする</a></li>
+    <li><a href="#launching">Brightcove ブ動画コネクトの起動</a></li>
+    <li><a href="#linking">Video Cloud アカウントへのリンク</a></li>
+    <li><a href="#players">ビデオクラウドプレーヤーの定義</a></li>
+    <li><a href="#custfields">カスタムフィールドの定義</a></li>
+    <li><a href="#dropboxs3">一時的なアップロードストレージ用に Dropbox または AWS S3 にリンクする</a></li>
+    <li><a href="#permissions">SharePoint 権限の設定</a></li>
+    <li><a href="#videos">ビデオの追加、インポート、編集、削除</a></li>
+    <li><a href="#search">動画の検索</a></li>
+    <li><a href="#playlists">プレイリストの追加、インポート、削除</a></li>
+    <li><a href="#embedding">SharePoint サイトにビデオを追加する</a></li>
+  </ul>
+</section>
+<section class="bcls-section">
+  <h2 id="installing">SharePoint 用のBrightcove ブビデオコネクトをインストールする</h2>
+  <p>インストールを開始する前に、前提条件と権限に関する次の情報を確認してください。</p>
+  <ul>
+    <li>ユーザーが SharePoint 用のアプリを追加する前に、ファーム管理者グループのメンバーは、SharePoint 用のアプリをサポートするように環境を構成する必要があります。詳細については、<a href="https://technet.microsoft.com/en-us/library/fp161236(v=office.15).aspx">「SharePoint2013用のアプリの環境を構成する」</a>または<a href="https://technet.microsoft.com/en-us/library/fp161236(v=office.16).aspx">「SharePoint2016」</a>&nbsp;または&nbsp;<a href="https://technet.microsoft.com/en-us/library/fp161236(v=office.16).aspx">「SharePoint2019」</a>を参照してください。</li>
+    <li>SharePoint 用のアプリを追加するには、ユーザーが [ <strong> Web サイトの管理</strong> ] および [ <strong>サブサイトの作成</strong> ] アクセス許可を持っている必要があります。既定では、これらのアクセス許可は、フルコントロールのアクセス許可レベルを持つユーザー、またはサイト所有者のグループのユーザーのみが使用できます。</li>
+    <li>ユーザーが SharePoint 用のアプリを追加すると、アプリは機能するために必要なアクセス許可 (たとえば、検索へのアクセスやリストの作成など) を要求します。これらのアクセス許可を持っていないユーザーには、十分なアクセス許可がないことが通知され、アプリを追加できません。ユーザーは、サイト管理者またはファーム管理者に問い合わせて、管理者がアプリを追加できるかどうかを確認できます。</li>
+    <li>システムアカウントとしてサイトにログインしたユーザーは、アプリをインストールできません。システムアカウントは、パフォーマンスの問題が発生する可能性があるため、アプリライセンスをインポートできません。</li>
+  </ul>
+  <h3>Brightcove ブのビデオコネクトアプリをアプリカタログに追加する</h3>
+  <div><!--
+            <iframe class="training-video-player" src="//players.brightcove.net/20318290001/E16-WGGOe_default/index.html?videoId=5026949771001" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" height="360" width="640"></iframe>
+            --></div>
+  <h4>アプリカタログの設定</h4>
+  <p>Brightcove ブコネクタをインストールするには、まず SharePoint でアプリケーションカタログをセットアップします。この手順を完了するには、以下の参照を使用します。</p>
+  <ul>
+    <li><a href="https://technet.microsoft.com/en-us/library/fp161234(v=office.15).aspx">SharePoint 2013 でアプリカタログを管理する</a></li>
+    <li><a href="https://technet.microsoft.com/en-us/library/fp161234(v=office.16).aspx">SharePoint 2016 でアプリカタログを管理する</a></li>
+    <li><a href="https://docs.microsoft.com/en-us/SharePoint/administration/manage-the-app-catalog">SharePoint 2019 でアプリカタログを管理する</a></li>
+  </ul>
+  <h4>Brightcove ブ動画コネクトアプリをカタログに追加する</h4>
+  <p>アプリカタログを設定したら、以下の手順に従います。</p>
+  <ol class="bcls-tasklist">
+    <li>この手順を実行するユーザーアカウントが、アプリカタログのサイト所有者またはデザイナーグループのメンバーであることを確認します。</li>
+    <li>[アプリカタログサイト] で、[ <strong> SharePoint 用アプリ</strong> ] ボックスの一覧をクリックします。</li>
+    <li>[ <strong> SharePoint 用アプリ</strong> ] ページで、[ <strong>新しいアイテム</strong> ] をクリックします。</li>
+    <li>[ <strong>ファイルの選択</strong> ] ボックスで、[ <strong>参照</strong> ] をクリックし、<i> BrightCoveConnectorApp </i>ファイルを含むフォルダを探します。</li>
+    <li>アプリを選択し、[ <strong>開く</strong> ] をクリックします。</li>
+    <li><strong>「OK」</strong>をクリックしてアプリをアップロードします。</li>
+    <li>[アイテムの詳細] ボックスで、アプリの名前、タイトル、短い説明、アイコン URL、およびその他の設定を指定します。ユーザーが自分のサイトでアプリを表示できるように、[ <strong>有効</strong> ] チェックボックスがオンになっていることを確認します。[おすすめ] チェックボックスをオンにすると、アプリカタログの [ <strong>注目</strong> ] コンテンツビューにアプリを表示できます。</li>
+    <li>[<strong>保存</strong>]をクリックします。</li>
+  </ol>
+  <h4>サイトへの Brightcove ビデオコネクトアプリのインストール</h4>
+  <div><!--
+            <iframe class="training-video-player" src="//players.brightcove.net/20318290001/E16-WGGOe_default/index.html?videoId=5026949771001" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" height="360" width="640"></iframe>
+            --></div>
+  <p>サイトに Brightcove コネクタをインストールするには、以下の手順に従います。</p>
+  <ol class="bcls-tasklist">
+    <li>この手順を実行しているユーザーアカウントが Site Owners グループのメンバーであることを確認します。</li>
+    <li>アプリは次の 2 つの方法のいずれかでサイトに追加できます。
+      <ol class="bcls-tasklist">
+        <li>任意のページで、[ <strong>設定</strong> ] メニューから [ <strong>アプリを追加</strong> ] オプションを選択します。<br/><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-install-app-add-an-app.png"/></li>
+        <li>[ <strong>サイトのコンテンツ</strong> ] から<strong> [アプリを追加</strong> ] オプションを使用します。<br/><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-install-app-add-an-app-icon.png"/></li>
+      </ol>
+    </li>
+    <li>次に、[組織から] をクリックし、[ <strong> BrightCoveConnector </strong>アプリ] をクリックします。<br/><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-install-app-brightcove-connector-icon.png"/></li>
+    <li>[アクセス許可の付与] ダイアログボックスで、[信頼する] をクリックします。<br/><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-install-app-trust-it.png"/></li>
+    <li>この時点で、SharePoint 用<strong> BrightCoveConnector </strong>アプリが追加され、サイトコンテンツリストの [アプリ] セクションに表示されます。現在、本サイトで使用可能です。</li>
+  </ol>
+  <br/><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-install-app-complete.png"/>
+  <h4>Brightcove ビデオコネクトアプリケーションのデフォルトリストのプロビジョニング</h4>
+  <p>Brightcove コネクタを使用する前に、以下の手順に従って必要なリストをプロビジョニングする必要があります。</p>
+  <ul>
+    <li>アプリが最初にインスタンス化されたとき、またはリストがローカルサイトに存在しない場合、ユーザーには、サイト内のリストのプロビジョニングを可能にする最大3つのオプションが表示されます。<br/><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-install-lists-create.png"/></li>
+    <br/>
+    <li>クリックすると、各ボタンがエフェクトのメッセージを表示します。<br/><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-install-lists-message.png"/></li>
+    <li>[設定リストを作成] をクリックすると、Brightcove 設定リストの作成に加えて、このリストを編集するプロンプトが表示され、Brightcove ブ API サポートに必要なプロキシ URL が設定されていることを確認できます。<br/><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-install-lists-videos.png"/></li>
+    <li>このリンクをクリックすると、[Brightcove Settings] リストが開き、プロキシサーバのアクセス情報を即座に編集できます。タイトルは「プロキシ」に設定する必要があります。proxyURL は、Brightcove ブ API へのアクセスに使用するプロキシサーバの場所に固有のものです。<a href="#installingproxy">プロキシサーバの使用の詳細については、「Brightcove API 通信でのプロキシサーバの使用</a>」を参照してください。<br/><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-install-lists-settings-proxy.png"/></li>
+    <li>リストのプロビジョニングが完了すると、サイトに次のリストが作成されます。
+      <ul>
+        <li>アカウント-アカウントオブジェクトを表すカスタムリスト。</li>
+        <li>ビデオ-ビデオオブジェクトを表すカスタムリスト。</li>
+        <li>設定-プロキシサーバーの詳細を格納するリスト。</li>
+      </ul>
+      <br/><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-install-lists-complete.png"/></li>
+  </ul>
+  <h3 id="sharepointpermissions">SharePoint のアクセス許可を設定する</h3>
+  <p>コネクタを SharePoint に直接統合する利点は、アクセス許可モデルを活用できることです。SharePoint 管理者は、コネクタのさまざまな機能にアクセスできるユーザーを制御できます。以下は、コネクタのセクションへのアクセスを制御するためにコネクタによって使用されるグループの既定のセットです。</p>
+  <table class="bcls-table">
+    <thead class="bcls-table__head">
+      <tr>
+        <th>&nbsp;</th>
+        <th><strong>bcAdmin </strong></th>
+        <th><strong>bcVideoAdd </strong></th>
+        <th><strong>どちらのグループにもないユーザー</strong></th>
+      </tr>
+    </thead>
+    <tbody class="bcls-table__body">
+      <tr>
+        <td>ホーム</td>
+        <td>X</td>
+        <td>X</td>
+        <td>X</td>
+      </tr>
+      <tr>
+        <td>アカウント管理</td>
+        <td>X</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>ビデオを追加/編集</td>
+        <td>X</td>
+        <td>X</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>動画を管理</td>
+        <td>X</td>
+        <td>X</td>
+        <td>X</td>
+      </tr>
+      <tr>
+        <td>プレイリストの管理</td>
+        <td>X</td>
+        <td>X</td>
+        <td>X</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>注釈</p>
+  <ul>
+    <li>グループは SharePoint 管理者によってセットアップする必要があり、インストール時にコネクタによって自動的に作成されることはありません。</li>
+    <li>アプリにアクセスするには、Connectorがインストールされているサイトへの訪問者のアクセス権が少なくとも必要です。アプリがインストールされているサイトにアクセスすると、ユーザーは Connector の [ホーム]、[ビデオの管理]、および [プレイリストの管理] セクションを表示できます。</li>
+    <li>以下のグループに加えて、各アカウントは、後で説明する Author および View Group を使用してセットアップされます。</li>
+  </ul>
+</section>
+<section class="bcls-section">
+  <h2>SharePoint オンライン用のプレーヤーソリューションパッケージをインストールしています</h2>
+  <p>Brightcove ブビデオコネクトパッケージに含まれるBrightcove ブプレーヤーソリューションパッケージを使用すると、ユーザーは SharePoint サイトページにBrightcove ブの動画プレーヤーを埋め込むことができます。Brightcove ブプレーヤーソリューションパッケージでは、SharePoint Online と SharePoint Server の両方と互換性があり、両方で使用できる SharePoint コントロールを使用します。ビデオを埋め込む Player Web パーツサンドボックスソリューションは Brightcove Video Connect パッケージでも使用できますが、SharePoint Online とマイクロソフトがホストする SharePoint Server にはサンドボックスソリューションを禁止するセキュリティ制限があるため、オンプレミスの SharePoint Server でのみ使用できます。このソリューションは&nbsp;次のセクションで説明しています。</p>
+  <p>SharePoint Online に Brightcove プレーヤーを埋め込むには、&nbsp;ここで説明するソリューションパッケージを使用してユーザーが動画プレーヤーまたはプレイリストプレーヤーを選択し、ユーザーが SharePoint 埋め込みコードダイアログボックスにコピー/ペーストするためのプレーヤー埋め込みコードが生成されます。</p>
+  <p>注-このセクションには、BrightCovePlayer.WSP ソリューションファイルが必要です。</p>
+  <ol class="bcls-tasklist">
+    <li>Brightcove アプリケーションがインストールされているサイトコレクションのルートサイトで、[サイトの設定] → [&gt; サイトコレクションの管理] → [&gt; HTML フィールドセキュリティ] に移動します。<br/><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-embed-player-html-field-security.png"/></li>
+    <li>players.brightcove.netを許可されたiframeドメインとして追加する<br/><img class="bcls-image--no-border" alt="" width="800" src="/assets/images/sharepoint/node16612-embed-player-add-domain.png"/></li>
+    <li>Brightcove アプリケーションがインストールされているサイトコレクションのルートサイトで、[サイトの設定]-[&gt; Web デザイナーギャラリー]-[&gt; ソリューション] に移動します。<br/><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-embed-player-solution-gallery.png"/></li>
+    <li>ソリューションギャラリーに「BrightCovePlayer.wsp」ファイルをアップロードし、ファイルをアクティブにします。<br/><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-embed-player-brightcoveplayer-wsp.png"/></li>
+    <li>[サイトの設定] → [&gt; サイトの操作] → [&gt; サイト機能の管理] に移動します。<br/><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-embed-player-manage-site-features.png"/></li>
+    <li>「Brightcove ブプレーヤー」機能を有効にします。<br/><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-embed-player-activate-brightcove-player.png"/></li>
+    <li>インストール時に BrightCoveConnectorResources ドキュメントライブラリが作成されたことを確認します。<br/><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-embed-player-check-brightcoveconnectorresources.png"/></li>
+    <li>そうでない場合は、BrightCoveConnectorResources という新しいドキュメントライブラリを作成します。<br/><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-embed-player-add-brightcoveconnectorresources.png"/></li>
+    <li>をクリックし、BrightcovePlayer.css と BrightcovePlayer.js をドキュメントライブラリにアップロードします。<br/><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-embed-player-copy-brightcoveconnectorresources.png"/></li>
+  </ol>
+</section>
+<section class="bcls-section">
+  <h2 id="Installing_Player_Web_Part_For_SharePoint_On-Premise">オンプレミスの SharePoint 用プレーヤー Web パーツをインストールする</h2>
+  <p>オンプレミスでインストールされた SharePoint Server でコネクタを使用している場合は、前のセクションで説明したように、Player ソリューションパッケージをインストールするか、このセクションで説明した Player Web パーツサンドボックスソリューションをインストールできます。&nbsp;このサンドボックスソリューションは、セキュリティ制限のため、マイクロソフトがホストする SharePoint Online または SharePoint Server では動作しません。&nbsp; Player Web パーツでは、ユーザーが埋め込みコードをコピー/貼り付けする必要がないため、SharePoint サイトにプレーヤーを追加する方法がやや合理化されています。</p>
+  <p>注-このセクションには、BrightCoveVideoCloudPlayer.WSP ソリューションファイルが必要です。</p>
+  <ol bcls-tasklist="">
+    <li>コマンドラインから次のように入力して、ソリューションを SharePoint に追加します。
+      <pre>
+        stsadm-o addsolution-ファイル名 BrightCoveVideoCloudPlayer.WSP</pre>
+    </li>
+    <li>ブラウザで「サーバーの全体管理-&gt; システム設定-ファーム管理-&gt; &gt; ファームソリューションの管理」に移動して、ソリューションを展開します。<br/><img class="bcls-image--no-border" alt="" width="800" src="/assets/images/sharepoint/node16612-embed-player-webpart-system-settings.png"/></li>
+    <li>ファームのソリューションストアに BrightCoveVideoCloudPlayer.WSP が表示されるはずです。「BrightCoveVideoCloudPlayer.WSP」をクリックし、「ソリューションのデプロイ」をクリックしてソリューションをデプロイします。<br/><img class="bcls-image--no-border" alt="" width="800" src="/assets/images/sharepoint/node16612-embed-player-webpart-solution-properties.png"/></li>
+    <br/>
+    <li>[サイトアクション/サイトの設定-サイトコレクションの管理-&gt; &gt; サイトコレクション機能] をクリックして、機能をアクティブにします。<br/><img class="bcls-image--no-border" alt="" width="800" src="/assets/images/sharepoint/node16612-embed-player-webpart-site-settings.png"/></li>
+    <br/>
+    <li>「AE 一部の Web パーツ」機能をアクティブにします。<br/><img class="bcls-image--no-border" alt="" width="200" src="/assets/images/sharepoint/node16612-embed-player-webpart-activate.png"/></li>
+  </ol>
+</section>
+<p>&lt;クラス= "bcls-section」&gt;</p>
+<h2 id="installingproxy">Brightcove ブ API 通信用のプロキシサーバのインストール</h2>
+<div><!--
+    <iframe class="training-video-player" src="//players.brightcove.net/20318290001/E16-WGGOe_default/index.html?videoId=5026949771001" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" height="360" width="640"></iframe>
+  --></div>
+<p>Connector はクライアント側の JavaScript アプリケーションであるため、認証された Brightcove API への通信を仲介するには、プロキシサーバが必要です。詳細については、<a href="https://apis.support.brightcove.com/oauth/getting-started/overview-oauth-api-v4.html">Brightcove ブ API ドキュメントを参照してください。</a></p>
+<p>.net プロキシアプリは Brightcove ビデオコネクトパッケージで提供されています。プロキシサーバーは、Microsoft Azure などの Web アクセス可能な場所にデプロイする必要があります。セキュリティ上の理由から、プロキシは、プロキシと共にインストールされた web.config ファイルに含まれている Web サイトからの接続のみを許可するように設計されています。web.config ファイルの brightcove: orins キーには、<strong> BrightCoveConnector </strong>アプリケーションの SharePoint ウェブサイト URL と、<strong> BrightCovePlayer </strong>コンポーネントが実行されるサイトのウェブサイト URL を含める必要があります。以下の例を参照してください。</p>
+<p><code translate="No">&lt;add key="brightcove:origins" value="https://brightcovecms-a3da847a1c9e33.sharepoint.com, https://brightcovecms.sharepoint.com" /&gt; </code></p>
+<p>複数のサイトは、コンマ区切りの文字列としてリストすることができます。</p>
+<section class="bcls-section">
+  <h2 id="launching">SharePoint 向けのBrightcove ブビデオコネクトの起動</h2>
+  <!--
+            <iframe class="training-video-player" src="//players.brightcove.net/20318290001/E16-WGGOe_default/index.html?videoId=5026949771001" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" height="360" width="640"></iframe>
+            -->
+  
+  <p>アプリケーションを起動するには、ユーザーが [サイトのコンテンツ] リスト内の<strong> BrightCoveConnector </strong>アプリケーションをクリックするか、または SharePoint 管理者が設定したメニューリンクをクリックします。</p>
+  <p>いずれの場合も、ユーザーはコネクタアプリのホームページに移動します。このページは、追加の会社固有のメッセージやリンクなどを含めるようにクライアントによってさらに構成できます。インストールセクションで説明したように、ユーザーのグループメンバーシップによっては、[アカウント管理] タブと [ビデオの追加] タブが表示される場合と表示されない場合があります。</p>
+  <p>コネクタの左側の列のメインナビゲーションは常に存在し、ユーザーはアクセス権のあるすべてのセクションをナビゲートできます ( <a href="#sharepointpermissions">権限については</a>、上記のセクションを参照してください)。次に、コネクタの各コンポーネントの目的の簡単な説明を示します。</p>
+  <ul>
+    <li><strong>ホーム</strong> -コネクタを最初に入力するときのランディングページ。</li>
+    <li><strong>アカウント管理</strong> -Brightcove ブ動画クラウドアカウント情報を SharePoint に入力するためのインターフェイスを提供します。</li>
+    <li><strong>動画を追加する</strong> -新しい動画を Video Cloud にアップロードします。ビデオオブジェクトは、SharePointでも作成されます（実際のビデオファイルを除く）。</li>
+    <li><strong>ビデオの管理-既存の動画を参照して編集し</strong>、Video Cloud から SharePoint にビデオをインポートします。</li>
+    <li><strong>プレイリストの管理</strong> -新しいプレイリストを作成し、既存のプレイリストを参照および管理します。</li>
+  </ul>
+  <figure><img class="bcls-image--no-border" alt="" style="width:400px;" src="/assets/images/sharepoint/node16612-launch-main-menu.png"/></figure>
+  <p>また、<strong> Brightcove から動画を追加コンポーネントと</strong><strong> [ビデオの編集] </strong>コンポーネントも、これらの操作を実行するときにメインナビゲーションに表示されます。</p>
+  <table>
+    <tbody>
+      <tr>
+        <td><img class="bcls-image--no-border" alt="" style="width:400px;" src="/assets/images/sharepoint/node16612-launch-main-menu-add.png"/></td>
+        <td><img class="bcls-image--no-border" alt="" style="width:400px;" src="/assets/images/sharepoint/node16612-launch-main-menu-edit.png"/></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section class="bcls-section">
+  <h2 id="linking">Video Cloud アカウントへのリンク</h2>
+  <p>Connector の [アカウント管理] セクションは、リンクされた Brightcove Video Cloud アカウントの情報を入力し、サイト内でアクセスします。<strong>Brightcove ブのアカウントは SharePoint からは作成できません。まず Video Cloud で作成する必要があります。</strong>Brightcove ブのアカウント情報は、Brightcove ブ API にアクセスして Video Cloud と通信するときに使用されるため、SharePoint に入力する必要があります。また、アカウントに固有のアクセス許可を割り当てる手段も提供します。マルチアカウントのエンタープライズクライアントの場合、各アカウントにアクセスできるユーザーと、動画の閲覧またはアップロードのみを許可するかどうかを制御できます。</p>
+  <div><!--
+            <iframe class="training-video-player " src="//players.brightcove.net/20318290001/E16-WGGOe_default/index.html?videoId=5026949771001 " allowfullscreen=" " webkitallowfullscreen=" " mozallowfullscreen=" " height="360 " width="640 "></iframe>
+            --></div>
+  <h3>アカウント管理のランディング・ページ</h3>
+  <p>「アカウント管理」ランディング・ページには、構成済みのアカウントの現在のリストと、作成者と閲覧者に割り当てられたグループが表示されます。</p>
+  <img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-account-mgmt-landing-page.png"/>
+  <ol>
+    <li><strong>アカウントタイトル</strong> -現在構成されている (または少なくとも作成されている) アカウント。</li>
+    <li><strong>AuthorsGroup </strong> -アカウントに「作成者」権限が割り当てられた SharePoint グループ。</li>
+    <li><strong>ViewersGroup </strong> -アカウントに「閲覧者」権限を割り当てられた SharePoint グループ。</li>
+    <li><strong>新しいアカウントの追加</strong> -アカウント作成画面を開いて、新しいアカウントを設定します。</li>
+  </ol>
+  <h3>アカウントの作成/編集</h3>
+  <p>新しいアカウントを作成する場合も、既存のアカウントを編集する場合でも、プロセスとオプションは同じです。アカウントプロパティ（作成者グループおよび視聴者グループを除く）はすべて、まず Video Cloud アカウントから取得する必要があります。各アカウントに必要なプロパティを次に示します。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-account-mgmt-creating-account.png"/></figure>
+  <ol class="bcls-tasklist">
+    <li><strong>アカウント名</strong> -アカウントの名前。この名前は SharePoint でのみ使用されるため、ビデオクラウドと同じである必要はありません。</li>
+    <li><strong>defaultVideoPlayerId </strong> -ビデオのデフォルトのプレーヤーを設定します。</li>
+    <li><strong>defaultPlayListPlayerId </strong> -デフォルトのプレイリストプレーヤーを設定します。</li>
+    <li><strong>アカウント ID </strong> -動画クラウドのBrightcove ブのアカウント ID。</li>
+    <li><strong>clientID </strong> -Brightcove ブ API 認証クライアント ID。</li>
+    <li><strong>クライアントシークレット</strong> -Brightcove ブ API 認証クライアントシークレット。</li>
+    <li><strong>一時保存場所</strong> -ビデオとテキストトラックを Video Cloud にアップロードする際に使用される一時的な保存場所です。ドロップダウンでは、アマゾンウェブサービス（AWS）または Dropbox のいずれかを選択できます。</li>
+    <li><strong>AWS アクセスキー ID </strong> -AWS を使用している場合は、アクセスキー ID をここに入力します。</li>
+    <li><strong>AWS シークレットアクセスキー</strong>— AWS を使用している場合は、ここにシークレットアクセスキーを入力します。</li>
+    <li><strong>AWS バケット名</strong>— AWS を使用している場合は、AWS バケット名をここに入力します。</li>
+    <li><strong>Dropbox アカウント ID </strong> -Dropbox を使用している場合は、ここにDropboxアカウント ID を入力します。</li>
+    <li><strong>Dropbox アクセストークン</strong> -Dropbox を使用している場合は、ここにDropboxアクセストークンを入力します。</li>
+    <li><strong>カスタムフィールド</strong> -このアカウントの Video Cloud で作成されたカスタムフィールドをマップするために使用されます。詳細については、「<a href="#custfields">カスタムフィールドのマッピング</a>」を参照してください。</li>
+    <li><strong>作成者のグループ、閲覧者のグループ</strong> -アカウントの SharePoint 側の権限定義グループ。
+      <ol type="a">
+        <li>著者グループ（この場合、SharePointの「所有者」グループ）のメンバーは、ビデオの追加、既存のビデオの編集と更新、プレイリストの作成/編集などの書き込みトークンを必要とするアカウントで機能を実行することができます。また、動画やプレイリストのブラウジングや検索など、すべての読み取りタイプの機能を実行できます。</li>
+        <li>ビューアのグループ (この場合は SharePoint の「訪問者」グループ) のメンバは、ビデオや再生リストの閲覧や検索などの読み取りタイプの機能に対してのみ許可されます。</li>
+      </ol>
+    </li>
+  </ol>
+  <p>上記のアカウントリストのプロパティのいずれかを編集するには、ユーザーがプロパティ名またはその値（存在する場合）をクリックして、プロパティのポップアップダイアログボックスを開くことができます。</p>
+  <h4>Brightcove ブから SharePoint にアカウント認証情報を入力する</h4>
+  <p>SharePoint をBrightcove ブ動画クラウドに接続するには、Brightcove ブのアカウント認証情報を SharePoint に追加する必要があります。このセクションでは、Brightcove ブでアカウント認証情報を見つける方法について説明します。次のセクションでは、これらの資格情報を SharePoint コネクタに追加する方法について説明します。</p>
+  <ol class="bcls-tasklist">
+    <li>Brightcove ブ動画クラウドにログインします。発行者 ID の値をメモします。<br/><img class="bcls-image--no-border" alt="" width="900" src="/assets/images/sharepoint/node16612-accounts-publisher-id.png"/></li>
+    <li>[管理者] に移動します。<br/><img class="bcls-image--no-border" alt="" width="900" src="/assets/images/sharepoint/node16612-accounts-admin.png"/></li>
+    <li>[API 認証] に移動します。<br/><img class="bcls-image--no-border" alt="" width="900" src="/assets/images/sharepoint/node16612-accounts-admin-api-authentication.png"/></li>
+    <li>新しいアプリケーションを登録します。<br/><img class="bcls-image--no-border" alt="" width="900" src="/assets/images/sharepoint/node16612-accounts-admin-register-button.png"/></li>
+    <li>アプリケーションに名前を付けて、アカウントアクセスを設定し、API を有効にします。<br/><img class="bcls-image--no-border" alt="" width="900" src="/assets/images/sharepoint/node16612-accounts-admin-auth-form.png"/></li>
+    <li>クライアント ID とクライアントシークレットを書き留めます。あなたは、次のセクションでSharePointにそれらを入力する必要があります。<br/><img class="bcls-image--no-border" alt="" width="500" src="/assets/images/sharepoint/node16612-accounts-admin-auth-credentials.png"/></li>
+  </ol>
+  <p>Brightcove ブのアカウント ID を設定するには、[アカウント ID] ボタンを選択し、前の手順で保存した Brightcove パブリッシャー ID を次のモーダルで入力します。</p>
+  <figure><img class="bcls-image--no-border" alt="" width="623" src="/assets/images/sharepoint/node16612-account-mgmt-account-id.png"/></figure>
+  <p>Brightcove クライアント ID を設定するには、[クライアント ID] ボタンを選択し、前の手順で保存したクライアント ID を次のモーダルで入力します。</p>
+  <figure><img class="bcls-image--no-border" alt="" width="623" src="/assets/images/sharepoint/node16612-account-mgmt-client-id.png"/></figure>
+  <p>Brightcove クライアントシークレットを設定するには、[クライアントシークレット] ボタンを選択し、前の手順で保存したクライアントシークレットを次のモーダルで入力します。</p>
+  <figure><img class="bcls-image--no-border" alt="" width="623" src="/assets/images/sharepoint/node16612-account-mgmt-client-secret.png"/></figure>
+  <ol class="bcls-tasklist">
+    <li>[ <strong>値</strong> ]: プロパティの値を入力します。この値は、Video Cloud データからカットアンドペーストを使用して入力できます（可能な場合）。</li>
+    <li>[ <strong>閉じる</strong> ]: 変更を加えずにプロパティダイアログボックスを閉じます。</li>
+    <li><strong>OK </strong> -プロパティリストに値を記録し、ダイアログを閉じます。</li>
+  </ol>
+</section>
+<section class="bcls-section">
+  <h3 id="players">ビデオクラウドプレーヤーの定義</h3>
+  <div><!--
+            <iframe class="training-video-player " src="//players.brightcove.net/20318290001/E16-WGGOe_default/index.html?videoId=5026949771001 " allowfullscreen=" " webkitallowfullscreen=" " mozallowfullscreen=" " height="360 " width="640 "></iframe>
+            --></div>
+  <p>SharePoint でデフォルトのシングル動画プレーヤーとして使用するプレーヤー ID を設定するには、[DefaultVideoPlayerID] ボタンを選択し、次のモーダルでBrightcove ブのプレーヤー ID を入力します。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-account-mgmt-player-id.png"/></figure>
+  <ol class="bcls-section">
+    <li>[ <strong>値</strong> ]: プロパティの値を入力します。Video Cloud データがある場合は、カットアンドペーストを使用して値を入力できます。</li>
+    <li>[ <strong>閉じる</strong> ]: 変更を加えずにプロパティダイアログボックスを閉じます。</li>
+    <li><strong>OK </strong> -プロパティリストに値を記録し、ダイアログを閉じます。</li>
+  </ol>
+  <p>SharePoint でデフォルトのプレイリスト動画プレーヤーとして使用するプレーヤー ID を設定するには、[DefaultPlayListPlayerID] ボタンを選択し、Brightcove ブのプレーヤー ID を入力します。</p>
+</section>
+<section class="bcls-section">
+  <h3 id="custfields">カスタムフィールドの定義</h3>
+  <div><!--
+            <iframe class="training-video-player " src="//players.brightcove.net/20318290001/E16-WGGOe_default/index.html?videoId=5026949771001 " allowfullscreen=" " webkitallowfullscreen=" " mozallowfullscreen=" " height="360 " width="640 "></iframe>
+            --></div>
+  <p>Brightcove コネクタでアカウントを設定すると、Video Cloud で作成されたカスタム項目を Connector のアカウントプロファイルに追加して、[動画の追加] 領域と [動画の管理] 領域に表示したり、検索用に SharePoint に値を格納することができます。カスタムフィールドがマップされると、[アカウント管理] 画面の [カスタムフィールド] セクションに、必須フィールドかどうかが表示されます。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-account-mgmt-custom-field-mapping.png"/></figure>
+  <p>カスタムフィールドを追加、削除、または編集するには、[カスタムフィールドの編集] ボタンを選択します。次のモーダルウィンドウが表示されます。このウィンドウには、<u>アカウントで使用可能なすべてのカスタムフィールドが表示されます</u>。注-このリストは、新しいアカウントを初めて保存した後にのみ表示されます。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-account-mgmt-edit-custom-fields.png"/></figure>
+  <ol class="bcls-tasklist">
+    <li><strong>Video Cloud カスタムフィールド</strong> -選択したアカウントの Video Cloud で定義されているすべてのカスタムフィールドの名前。</li>
+    <li><strong>[ 種類</strong> ]: ユーザー設定フィールドの種類 (テキストまたはリスト)。</li>
+    <li><strong>必須</strong> -カスタムフィールドが必須かどうかを示します。この定義は Video Cloud で設定され、コネクタ内から変更することはできません。</li>
+    <li><strong>含む</strong> -ビデオを追加、編集、または管理するときに表示されるように、コネクタ内のアカウントの一部にカスタムフィールドを作成します。</li>
+  </ol>
+</section>
+<section class="bcls-section">
+  <h2 id="dropboxs3">一時的なアップロードストレージ用に Dropbox または AWS S3 にリンクする</h2>
+  <div><!--
+            <iframe class="training-video-player " src="//players.brightcove.net/20318290001/E16-WGGOe_default/index.html?videoId=5026949771001 " allowfullscreen=" " webkitallowfullscreen=" " mozallowfullscreen=" " height="360 " width="640 "></iframe>
+            --></div>
+  <p>Brightcove ブ API では、Video Cloud で処理されるファイル（動画ファイル、テキストトラックファイル）を、Brightcove コネクタと Video Cloud の両方からアクセス可能な中間場所にアップロードする必要があります。AWS S3 と Dropbox は、Brightcove ブコネクタで利用できる 2 つの推奨サービスです。</p>
+  <p>Brightcove コネクタの [アカウント設定] セクションに必要な情報を生成するためにこれらのサービスを設定する方法については、次のリンクを参照してください。</p>
+  <ul>
+    <li><a href="https://apis.support.brightcove.com/dynamic-ingest/getting-started/source-file-upload-api-dynamic-ingest.html">概要:</a><a href="https://apis.support.brightcove.com/dynamic-ingest/general/using-dynamic-ingest-s3.html">S3 <br/>で動的インジェストを使用する動的インジェスト</a> API <br/><a href="https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html"> http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html <br/></a><a href="https://www.dropbox.com/developers"> https://www.dropbox.com/developers</a></li>
+  </ul>
+  <p>注-AWS S3 または Dropbox にアップロードされたファイルは自動的に削除されません。一定時間が経過するとファイルが自動的に削除されるように、これらのサービスでポリシーを設定することをお勧めします。</p>
+  <h4>一時保存場所のポップアップ</h4>
+  <p>ファイルのアップロードに使用する一時保存場所を設定するには、[一時保存場所] ボタンを選択し、プルダウンからストレージオプションのいずれかを選択します。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-account-mgmt-temp-storage.png"/></figure>
+  <ol class="bcls-tasklist">
+    <li><strong>値</strong> -一時的な保存場所として、アマゾンウェブサービスまたは Dropbox のいずれかを選択します。</li>
+    <li><strong>OK </strong> -プロパティリストに値を記録し、ダイアログを閉じます。</li>
+  </ol>
+  <p>ストレージの場所の選択に応じて、[AWS アクセスキー ID]、[AWS シークレットアクセスキー]、[AWS バケット名] ボタンを選択して AWS S3 に必要な設定データを入力するか、[Dropbox アカウント ID] ボタンと [Dropbox アクセストークン] ボタンを選択して Dropbox に必要な設定データを入力します。</p>
+</section>
+<section class="bcls-section">
+  <h2 id="permissions">SharePoint 権限の設定</h2>
+  <p>作成者のグループとして承認されるべきSharePointグループを設定するには、[作成者のグループ] ボタンを選択し、次のモーダルに示すように、プルダウンからグループを選択します。</p>
+  <h4>グループプロパティのポップアップ</h4>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-account-mgmt-group-property.png"/></figure>
+  <ol class="bcls-tasklist">
+    <li><strong>グループの選択</strong> -コネクタがインストールされているサイトで使用可能な SharePoint グループをすべて表示します。</li>
+    <li><strong>OK </strong> -プロパティリストに値を記録し、ダイアログを閉じます。</li>
+  </ol>
+  <p>ビューアのグループとして承認されるSharePointグループを設定するには、「ビューアのグループ」ボタンを選択し、プルダウンからグループを選択します。</p>
+  <p><strong>重要-アカウントの値は、アカウントの「保存」ボタンをクリックするまで保存されません。プロパティダイアログボックスに値を入力しても、すぐにアカウントに保存されるわけではありません。</strong></p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-account-mgmt-save-delete.png"/></figure>
+  <ol>
+    <li><strong>[ アカウントの保存]: アカウントプロパティに設定されているすべての値を</strong> SharePoint にコミットします。</li>
+    <li><strong>アカウントの削除</strong> -SharePointからアカウントを削除します。警告-この操作を実行すると、アカウントで SharePoint にインポートされたすべての動画が SharePoint ではアクセスできなくなります。ただし、Video Cloud から動画は削除されません。</li>
+    <li><strong>キャンセル</strong> -変更を記録せずにアカウント設定ウィンドウを閉じます。</li>
+  </ol>
+</section>
+<section class="bcls-section">
+  <h2 id="videos">ビデオの追加、インポート、削除</h2>
+  <p>SharePoint Connector を使用すると、コンテンツ作成者は自分のローカルコンピュータからビデオをアップロードし、ビデオのメタデータを編集できます。</p>
+  <div><!--
+            <iframe class="training-video-player " src="//players.brightcove.net/20318290001/E16-WGGOe_default/index.html?videoId=5028605017001 " allowfullscreen=" " webkitallowfullscreen=" " mozallowfullscreen=" " height="360 " width="640 "></iframe>
+   --></div>
+  <h3>動画の追加</h3>
+  <p>Connector の [ビデオを追加] セクションを使用して、新しい動画を Video Cloud にアップロードします。ビデオファイル自体を除き、Video Cloud にアップロードされるすべてのデータは SharePoint に格納されるため、コネクタ機能や SharePoint 検索結果にも使用できます。また、SharePoint 管理者とユーザーは、Video Cloud にログインすることなく、データへのネイティブアクセスを提供します。</p>
+  <p>ビデオの追加では、単一の動画と複数の動画（一括アップロード）の両方をサポートしています。ユーザーが [ビデオを追加] にアクセスすると（権限がある場合）、次のフィールドが表示され、Video Cloud に送信されるメタデータを入力できます。</p>
+  <h4>「単一ビデオを追加」ランディングページ</h4>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-videos-add-single.png"/></figure>
+  <ol class="bcls-tasklist">
+    <li><strong>アカウントの選択</strong>（必須）-このドロップダウンリストには、ユーザーが動画を追加することを許可されているすべてのアカウントが表示されます。これは、アカウントグループの割り当てによって有効になります。アップロードを有効にするには、ユーザーはアカウントを選択する必要があります。</li>
+    <li><strong>名前</strong>（必須）-アップロードされた動画の名前。</li>
+    <li><strong>簡単な説明</strong> -ビデオの短い説明。</li>
+    <li><strong>詳細説明</strong> -ビデオの長い説明。</li>
+    <li><strong>アクティブ（</strong>必須）-彼のドロップダウンのオプションは次のとおりです。アクティブ、非アクティブ、保留中、削除済み。注-動画が [非アクティブ]、[保留中]、[削除済み] の状態でアップロードされた場合、SharePoint は今後編集するためにビデオ情報にアクセスできなくなります。これは、Brightcove ブ API の関数です。</li>
+    <li><strong>関連リンク URL、関連リンクテキスト</strong> -動画用にプレーヤーに表示される関連するハイパーリンクとテキスト。</li>
+    <li><strong>開始可能日、終了可能日</strong> -ビデオの可用性の日付を定義します。定義されている場合、動画はこの日付範囲外では再生されません。</li>
+    <li><strong>経済性</strong> -オプションは無料で、広告がサポートされています。</li>
+    <li><strong>Brightcove ブのタグ</strong> -SharePoint に保存されるだけでなく、Video Cloud タグ情報にも保存されるデータタグ。これらは、一部のクライアントがこのインターフェイスに追加する SharePoint メタデータタグとは区別され、SharePoint にのみ保存されます (Video Cloud に転送されません)。</li>
+    <li><strong>カスタムフィールド</strong> -選択したアカウントのコネクタに追加されたカスタムフィールドが表示されます。Video Cloud でカスタムフィールド用に定義された説明テキストは、フィールドの下に表示されます。</li>
+    <li><strong>テキストトラックファイル</strong> -最初のアップロード時またはその後の更新で、アップロードされた各動画にテキストトラックを追加できます。「<a href="#addingtexttracks">テキストトラックの追加」を参照してください。</a></li>
+    <li><strong>画像の詳細</strong> -ビデオのサムネイルと静止画は Video Cloud で生成され、API を介して SharePoint コネクタに返されます。ビデオは、[ビデオの管理] からビデオにアクセスすると表示されます。</li>
+    <li><strong>ビデオファイル</strong>（必須）-「参照」ボタンをクリックすると、ローカルファイルシステムエクスプローラが開き、アップロードするビデオファイルを選択します。</li>
+  </ol>
+  <p>ユーザーが「保存」ボタンをクリックすると、検証チェックが実行され、すべての必須フィールドが入力され、データが正しい形式であることを確認します。検証が失敗した場合、ユーザーは必須フィールドに入力するか、無効なデータを修正するように求められます。例は次のとおりです。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-videos-error-dialog.png"/></figure>
+  <p>検証エラーがない場合は、アップロードが開始されます。アップロード中は、アップロードの進行状況に関するフィードバックを提供するために、次のステータスモーダルが表示されます。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-videos-success-upload-dialog.png"/></figure>
+  <p>プロセスが完了すると、ユーザーはステータスダイアログを「閉じる」ことができ、次のメッセージがサイトに表示されます。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-videos-success-upload-connector-menu.png"/></figure>
+  <p>データはビデオクラウドに転送され、指定されたアカウントとビデオ名でSharePointに保存されます。SharePoint では、アップロードされた動画ごとに一意の ID も生成されます。この ID（参照 ID）は、動画とともに動画に追加タグとして Video Cloud に転送されます。</p>
+  <h4>「複数の動画を追加」ランディングページ</h4>
+  <p>[複数の動画を追加] オプションを選択すると、ユーザーは一度に複数の動画をアップロードできます。これを選択すると、すべての動画で共有されるフィールドのみが表示されます。複数の動画アップロードの場合、Video Cloud はビデオの名前として自動的にビデオファイル名を割り当てます。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-videos-add-multiple.png"/></figure>
+  <ol class="bcls-tasklist">
+    <li><strong>アカウントの選択</strong>（必須）-このドロップダウンリストには、ユーザーが動画を追加することを許可されているすべてのアカウントが表示されます。これは、アカウントグループの割り当てによって有効になります。アップロードを有効にするには、ユーザーはアカウントを選択する必要があります。</li>
+    <li><strong>関連リンク URL、関連リンクテキスト</strong> -動画用にプレーヤーに表示される関連ハイパーリンクとテキスト</li>
+    <li><strong>開始可能日、終了可能日</strong> -ビデオの可用性の日付を定義します。</li>
+    <li><strong>経済性</strong> -オプションは無料で、広告がサポートされています。</li>
+    <li><strong>Brightcove ブのタグ</strong> -SharePoint に保存されるだけでなく、Video Cloud タグ情報にも保存されるデータタグ。これらは、一部のクライアントがこのインターフェイスに追加する SharePoint メタデータタグとは区別され、SharePoint にのみ保存されます (Video Cloud に転送されません)。</li>
+    <li><strong>カスタムフィールド</strong> : 選択したアカウントのコネクタに追加されたカスタムフィールドが表示されます。Video Cloud でカスタムフィールド用に定義された説明テキストは、フィールドの下に表示されます。</li>
+    <li><strong>ビデオファイル（</strong>必須）-「ファイルを選択」ボタンをクリックすると、ローカルファイルシステムエクスプローラが開き、アップロードするビデオファイルを選択します。複数のファイルを追加するには、別のファイル選択オプションを追加する「別のファイルを追加」ボタンをクリックします。選択したファイルを一覧から削除するには、そのファイルの下にある [削除] ボタンをクリックするか、別のファイルを選択して置き換えます。「保存」をクリックすると、アップロードが開始され、アップロードダイアログボックスが表示され、ステータスが表示されます。アップロードが完了すると、ダイアログを閉じて、成功のメッセージが表示されます。</li>
+  </ol>
+  <p>「保存」をクリックすると、アップロードが開始され、アップロードダイアログボックスが表示され、ステータスが表示されます。アップロードが完了すると、ダイアログを閉じて、成功のメッセージが表示されます。</p>
+  <h3 id="addingtexttracks">テキストトラックの追加</h3>
+  <p>テキストトラックは、最初のアップロード時またはその後の更新時に任意のビデオに追加できます。ビデオには、1 つまたは複数のテキストトラックを関連付けることができます。ユーザーは、動画に追加するテキストトラックの種類（ファイルアップロード、URLアップロード、リモートURL）を選択できます。「なし」が選択されている場合、セクションにはどのフィールドも表示されません。</p>
+  <p><strong>重要:1 つの動画では、ファイルのアップロード、URL アップロード、リモート URL の混在はサポートされません。各ビデオに関連付けることができるテキストトラックは 1 種類だけです。</strong></p>
+  <h4>ファイルアップロード</h4>
+  <p>テキストトラックファイルで「ファイルのアップロード」を選択すると、次のフィールドが表示されます。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-text-tracks-file-upload.png"/></figure>
+  <ol class="bcls-tasklist">
+    <li><strong>テキストトラックのタイプを選択</strong> -ファイルアップロード、URLアップロード、またはリモートURLを選択できます。</li>
+    <li><strong>ファイル選択</strong> -テキストトラックファイルの選択。</li>
+    <li>[ <strong>テキストトラックのプロパティ</strong> ]: テキストトラックに関連付けられたプロパティを設定します。[追加] をクリックすると、次のアップロード/更新時にテキストトラックが動画データに追加されます。
+      <ol type="a">
+        <li><strong>言語</strong> -テキストトラックの言語を表す 2 文字のコード (有効な BCP 47 言語タグ)。英語の場合は「en」など。</li>
+        <li><strong>ラベル</strong> -字幕に使用できるさまざまな言語を一覧表示するメニューなど、ユーザーに表示されるトラックのラベル。</li>
+        <li><strong>種類</strong> -リストされている 5 つのサポートされているトラックタイプのうちの 1 つ</li>
+      </ol>
+    </li>
+    <li><strong>追加/キューされたテキスト・トラックのリスト</strong>：次の保存時にアップロード待ちの既存のテキスト・トラックと新しいテキスト・トラックの一覧を表示します。テキストトラックは、[削除] リンクをクリックしてビデオを保存することで削除できます。</li>
+  </ol>
+  <h4>URL アップロード、リモート URL アップロード</h4>
+  <p>これらのオプションのいずれかを選択すると、「File Upload」アップロードは、テキストトラックファイルへの完全修飾 URL パスを入力するテキストフィールドに置き換わります。</p>
+  <ul>
+    <li>URL アップロード -テキストトラックファイルが存在するパブリック URL を入力し、[ アップロード ] をクリックします。ファイルは Video Cloud にアップロードされます。</li>
+    <li>[ リモート URL  ]-テキストトラックファイルが存在するパブリック URL を入力します。URLは128文字以下であることが必要です。キャプションはリモートURLからロードされます。</li>
+  </ul>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-text-tracks-url-upload.png"/></figure>
+  <ol class="bcls-tasklist">
+    <li><strong>テキストトラックのタイプを選択</strong> -ファイルアップロード、URLアップロード、またはリモートURLを選択できます。</li>
+    <li><strong>[ URL </strong> ]-テキストトラックファイルへの完全修飾 URL パスを入力するフィールド。</li>
+    <li>[ <strong>テキストトラックのプロパティ</strong> ]: テキストトラックに関連付けられたプロパティを設定できます。[追加] をクリックすると、次のアップロード/更新時にテキストトラックが動画データに追加されます。
+      <ol type="a">
+        <li><strong>言語</strong> -テキストトラックの言語を表す 2 文字のコード (有効な BCP 47 言語タグ)。英語の場合は「en」など。</li>
+        <li><strong>ラベル</strong> -ユーザーに表示されるトラックのラベル (字幕に使用できるさまざまな言語を一覧表示するメニューなど)。</li>
+        <li><strong>種類</strong> -リストされている 5 つのサポートされているトラックタイプのうちの 1 つです。</li>
+      </ol>
+    </li>
+    <li><strong>追加/キューされたテキスト・トラックのリスト</strong>：次の保存時にアップロード待ちの既存のテキスト・トラックと新しいテキスト・トラックの一覧を表示します。テキストトラックは、[削除] リンクをクリックしてビデオを保存することで削除できます。</li>
+  </ol>
+  <h3>動画を管理</h3>
+  <p>コネクタの [ビデオの管理] セクションは、既存のビデオを参照および管理するために使用します。これには、必要に応じて既存のビデオの編集と更新が含まれます。検索機能は、検索名、説明、タグ情報で動画を検索するために使用されます。</p>
+  <h4>「ビデオの管理」ランディングページ</h4>
+  <p>「ビデオの管理」ランディングページには、利用可能なアカウントの動画を参照または検索するために使用できるフィールドのリストが表示されます。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-videos-manage.png"/></figure>
+  <ol class="bcls-tasklist">
+    <li><strong>アカウントの選択</strong> -このドロップダウンリストには、ユーザーがアクセスを許可されているすべてのアカウントが表示されます。これは、アカウントグループの割り当てによって有効になります。動画の一覧を表示するには、ユーザーはアカウントを選択する必要があります。</li>
+    <li><strong>検索</strong> -動画の結果を、単語を含むものにフィルタリングします。SharePoint メタデータフィールド (定義されている場合) とともに、名前、タグ、説明情報が検索されます。一度に 1 つのアカウントでのみ検索できます。クロスアカウント検索はサポートされていません。</li>
+    <li><strong>[ SharePoint のみ] または [ビデオクラウドのみを表示</strong> ]: SharePoint に記録されているもの、または Video Cloud にのみ常駐し、データを SharePoint にインポートしたことがないものだけに動画をフィルターします。</li>
+    <li><strong>並べ替え/順序フィルタ</strong> -動画をより迅速に検索できるように、一覧表示されたパラメータで結果を並べ替えて並べ替えるために使用します。</li>
+  </ol>
+  <h4>アカウントでの動画リストの表示</h4>
+  <p>アカウントを選択すると、そのアカウントで利用可能な動画の一覧が表示されます。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-videos-manage-sharepoint-listing.png"/></figure>
+  <ol class="bcls-tasklist">
+    <li><strong>アカウントの選択</strong> -このドロップダウンリストには、ユーザーがアクセスを許可されているすべてのアカウントが表示されます。アカウントグループの割り当てによって有効になります。動画の一覧を表示するには、ユーザーはアカウントを選択する必要があります。</li>
+    <li><strong>[ SharePoint のみ] または [ビデオクラウドのみを表示</strong> ]: このオプションの目的は、SharePoint に記録されているビデオ、または Video Cloud にのみ常駐し、SharePoint にデータがインポートされたことがないものだけに動画をフィルター処理することです。</li>
+    <li><strong>並べ替え/順序フィルタ</strong> -動画をより迅速に検索できるように、一覧表示されたパラメータで結果を並べ替えて並べ替えるために使用します。</li>
+    <li><strong>ページングコントロール</strong> -各ページには最大 5 つの動画リストが表示されます。5 つ以上存在する場合は、ページングコントロールが表示されます。</li>
+    <li><strong>動画リスト</strong> -各動画の一覧には次のものが含まれます。
+      <ol type="a">
+        <li>ビデオ名-名前をクリックすると、そのデータを編集するためにビデオが開きます。</li>
+        <li>簡単な説明</li>
+        <li>ビデオに関連付けられたタグのリスト（タグとして Video Cloud に保存されていても、参照 ID はリストされません）。</li>
+        <li>「ビデオの編集」リンク。現在のユーザーが権限を持っている場合、このリンク（または名前のクリック）は、編集のためにビデオを開くために使用されます。</li>
+        <li>動画ID:これは Video Cloud ビデオ ID です。このIDは、動画を編集し（変更を加えなくても）アップロード後初めて保存すると表示されます。</li>
+      </ol>
+    </li>
+  </ol>
+  <h4>ビデオクラウドのみのビデオを SharePoint にインポートする</h4>
+  <p>コネクタ経由ではなく、Video Cloud に直接アップロードされたビデオがある場合、そのビデオのデータを SharePoint に「インポート」して、SharePoint で管理することができます。これを行うには、まず「Video Cloud のみ」リストオプション (1) を使用して動画を見つけます。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-videos-manage-videocloud-listing.png"/></figure>
+  <p>次に、ビデオ名または [ビデオの編集] リンクをクリックして、次のセクションの説明に従って、ビデオを編集モードで開きます。ビデオを編集モードで保存すると、データはSharePointにも保存され、ビデオは「SharePointのみ」セクションに表示されます。</p>
+  <p><strong>重要-SharePointコネクタは、SharePointからビデオクラウドへのデータのみを同期し、ビデオクラウドはSharePointに同期しません。つまり、ビデオクラウドから SharePoint にビデオをインポートすると、メタデータへの変更は SharePoint で行う必要があり、Video Cloud で行われたメタデータへの変更は SharePoint では更新されず、次回そのビデオが SharePoint で編集されたときに上書きされます。</strong></p>
+  <h4>アカウント内の既存の動画を編集する</h4>
+  <p>既存の動画を編集してデータフィールドを更新するには、動画一覧内の名前 (1) または [ビデオの編集] リンク (2) をクリックします。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-videos-manage-edit-listing.png"/></figure>
+  <p>[ビデオの編集] 画面が表示され、選択したビデオのデータは編集用に表示されます。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-videos-manage-edit.png"/></figure>
+  <ol class="bcls-tasklist">
+    <li>「ビデオの編集」は、通常、「ビデオを追加」が表示されている左側のメインナビゲーションに表示されます。これは、既存のビデオであるため、同じページフォームを使用しているため、異なるモードになっているためです。これにより、必要に応じて [ビデオの管理] セクションに簡単に戻ることができます。</li>
+    <li>このプロセスでは、編集/更新に使用できないフィールドがあります。
+      <ul>
+        <li>動画が関連付けられているアカウントは、Video Cloud アカウント間で動画を転送できないため、変更できません。</li>
+        <li>参照 ID（Video Cloud ビデオ ID）は変更できません。</li>
+        <li>SharePoint ID は変更できません。</li>
+      </ul>
+    </li>
+  </ol>
+  <p>Video Cloud によって自動生成された画像を除く、他のすべての表示フィールドは、動画が初めてアップロードされたときと同様に更新できます。変更が行われたら、ユーザーは「保存」ボタンをクリックして変更をコミットします。ビデオの追加アップロードで実行されるのと同じ検証がここでも実行されます。</p>
+  <h4>動画を削除する</h4>
+  <p>SharePoint からのビデオの削除は、コネクタの外部で実行されます。SharePoint でビデオを削除するには、[サイトコンテンツ]-[&gt; 動画] に移動して、ビデオを見つけて削除できます。</p>
+  <p><strong>重要-SharePoint に記録されたビデオを削除しても Video Cloud 内のビデオは削除されず、ビデオを SharePoint にリンクするために使用されたタグがいくつか付いた Video Cloud に残ります。今後ビデオを SharePoint にインポートする場合は、「bcsp-」で始まるタグを削除する必要があります。</strong></p>
+</section>
+<section class="bcls-section">
+  <h2 id="search">動画の検索</h2>
+  <p>[動画の管理] で、ユーザーは検索語句を入力して、選択したアカウントで、検索語に一致する名前、説明、またはタグ情報を持つ動画を検索できます。結果リストが表示されたら、すべての並べ替えフィルタと順序フィルタを適用できます。</p>
+  <div><!--
+                <iframe class="training-video-player " src="//players.brightcove.net/20318290001/E16-WGGOe_default/index.html?videoId=5078428048001 " allowfullscreen=" " webkitallowfullscreen=" " mozallowfullscreen=" " height="360 " width="640 "></iframe>
+--></div>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-search-listing.png"/></figure>
+  <ol class="bcls-tasklist">
+    <li><strong>検索フィールド</strong> -ユーザーはここに検索語を入力し、虫めがね (または return) をクリックして検索を実行できます。</li>
+    <li><strong>[ SharePoint のみ] または [ビデオクラウドのみを表示</strong> ]: SharePoint に記録されているもの、または Video Cloud にのみ常駐し、データを SharePoint にインポートしたことがないものだけに動画をフィルターします。</li>
+    <li><strong>並べ替え/順序フィルタ</strong> -動画をより迅速に検索できるように、一覧表示されたパラメータで結果を並べ替えて並べ替えるために使用します。</li>
+  </ol>
+</section>
+<section class="bcls-section">
+  <h2 id="playlists">プレイリストの追加、インポート、削除</h2>
+  <p>Connector の [プレイリストの管理] セクションは、新しいプレイリストの作成や、編集や更新などの既存のプレイリストの参照と管理に使用されます。動画とは異なり、プレイリスト情報は SharePoint に保存されず、このセクションでアカウントを参照するたびに Video Cloud から取得されます。このため、API を介したプレイリストデータの可用性には、以下のセクションで説明する遅延がいくつかあります。</p>
+  <div><!--
+                <iframe class="training-video-player " src="//players.brightcove.net/20318290001/E16-WGGOe_default/index.html?videoId=5078707813001 " allowfullscreen=" " webkitallowfullscreen=" " mozallowfullscreen=" " height="360 " width="640 "></iframe>
+--></div>
+  <h3>プレイリストの管理ランディングページ</h3>
+  <p>「プレイリストの管理」ランディングページには、使用可能なアカウントでプレイリストの参照や新規作成に使用できるフィールドのリストが表示されます。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-playlist-manage.png"/></figure>
+  <ol class="bcls-tasklist">
+    <li><strong>アカウントの選択</strong> -このドロップダウンリストには、ユーザーがアクセスを許可されているすべてのアカウントが表示されます。これは、アカウントグループの割り当てによって有効になります。プレイリストの一覧を表示するには、ユーザーはアカウントを選択する必要があります。</li>
+    <li><strong>プレイリスト表示列</strong> -プレイリストのデータは、これらの列に表示されます。結果は、列見出しをクリックすることで、任意の列でソートできます。</li>
+    <li><strong>新しいプレイリストを追加</strong> -選択したアカウントに新しいプレイリストを作成するには、このボタンをクリックします。</li>
+  </ol>
+  <p>アカウントを選択すると、そのアカウントのすべてのプレイリストが表示されます。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-playlist-manage-list.png"/></figure>
+  <ol class="bcls-tasklist">
+    <li><strong>アカウントの選択</strong> -このドロップダウンリストには、ユーザーがアクセスを許可されているすべてのアカウントが表示されます。これは、アカウントグループの割り当てによって有効になります。プレイリストの一覧を表示するには、ユーザーはアカウントを選択する必要があります。</li>
+    <li><strong>プレイリスト表示列-列見出しをクリックすると</strong>、一覧を任意の列で並べ替えることができます。これは、リストが長くなる場合にプレイリストを見つけるのに役立ちます。</li>
+    <li><strong>プレイリストのリスト</strong> -各プレイリストには、次の項目が含まれます。
+      <ol type="a">
+        <li>プレイリスト名-名前をクリックすると、そのデータを編集するためのプレイリストが開きます。</li>
+        <li>再生リストでアクティブなビデオ ID のリスト。</li>
+        <li>簡単な説明。</li>
+        <li>プレイリストの種類- <a href="https://studio.support.brightcove.com/media/introduction-playlists.html">手動またはスマートプレイリスト</a>。</li>
+        <li>プレイリストの ID (ビデオクラウドプレイリスト ID)。</li>
+        <li>「プレイリストの編集」リンク。このリンク (または [名前] をクリック) は、プレイリストを開いて編集したり、詳細を表示したりするために使用されます。</li>
+      </ol>
+    </li>
+    <li><strong>新しいプレイリストを追加</strong> -選択したアカウントに新しいプレイリストを作成するには、このボタンをクリックします。</li>
+  </ol>
+  <h3>新しいプレイリストの追加</h3>
+  <p>アカウントに新しいプレイリストを追加するには、ユーザーは [新しいプレイリストの追加] ボタンをクリックします。[プレイリストの追加] フォームが開きます。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-playlist-manage-add.png"/></figure>
+  &nbsp;
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-playlist-manage-current-videos.png"/></figure>
+  <p>動画を再生リスト内で上下に移動するには、移動するビデオを選択し、[ビデオ移動] オプションを有効にして [上/下] ボタンを使用します。一度に複数のビデオを移動できます。</p>
+  <ol class="bcls-tasklist">
+    <li><strong>名前</strong> -新しいプレイリストの名前。</li>
+    <li><strong>説明</strong> -プレイリストの簡単な説明。</li>
+    <li><strong>タイプ</strong> -プレイリストの種類- <a href="https://studio.support.brightcove.com/media/introduction-playlists.html">手動またはスマート</a>。この例は、手動プレイリストを示しています。「プレイリストの編集」セクションの例は、スマートプレイリストのオプションを示しています。</li>
+    <li><strong>利用可能なビデオ</strong> -手動プレイリストの場合は、検索ボックスとアカウントで利用可能なビデオのリストを表示します。これにより、ユーザーはプレイリストに追加するビデオの選択肢を絞り込むことができます。</li>
+    <li><strong>利用可能な動画リスト</strong> -アカウントで利用可能な動画を一覧表示するか、検索語に基づいてフィルターします。ビデオをクリックすると、1つまたは複数のビデオを選択できます。選択したビデオは緑色で強調表示されます。ビデオの選択を解除するには、ユーザーがビデオをもう一度クリックします。これにより、複数の動画を 1 回のアクションでプレイリストに移動できます。</li>
+    <li><strong>アクション矢印</strong> -選択した動画を再生リストの中または外に移動します。</li>
+    <li><strong>このプレイリストの動画-プレイリストの現在の動画がここに表示されます</strong>。</li>
+    <li><strong>保存</strong> -変更をコミットし、Video Cloudで新しいプレイリストを作成するプロセスを開始します。注-プレイリストはSharePointに保存されません。</li>
+  </ol>
+  <h3>既存のプレイリストの編集</h3>
+  <p>既存のプレイリストの編集は、名前をクリックするか、プレイリスト一覧の [編集] リンクをクリックして開始します。これにより、次のビューが開き、プレイリストオプションを編集できます。この例は、スマートプレイリストのオプションを示しています。[プレイリスト ID] と [アカウント] 以外のフィールドを編集する場合は、次の項目を変更できます。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-playlist-manage-edit.png"/></figure>
+  <ol bcls-tasklist="">
+    <li><strong>名前</strong> -プレイリストの名前。</li>
+    <li><strong>説明</strong> -プレイリストの簡単な説明。</li>
+    <li><strong>タイプ</strong> -プレイリストの種類- <a href="https://studio.support.brightcove.com/media/introduction-playlists.html">手動またはスマート</a>。この例では、スマートプレイリストのオプションについて説明します。</li>
+    <li><strong>タグ</strong> -スマートプレイリストの場合、このフィールドでは、ユーザーがプレイリストに動的に含める動画を識別するために使用する条件とタグを指定できます。
+      <ul>
+        <li>条件のドロップダウンには、「1つ以上を含む」または「すべてを含む」が含まれます。</li>
+      </ul>
+    </li>
+    <li><strong>順序</strong> -これは、ユーザーが一致するビデオの順序を設定する方法を指定することができます。次の選択肢があります。
+      <ul>
+        <li>アルファベット順</li>
+        <li>アクティブ化された日（新しい順）</li>
+        <li>アクティブ化された日（古い順）</li>
+        <li>総再生回数順</li>
+        <li>先週よく再生された順</li>
+        <li>開始日（古い順）</li>
+        <li>開始日（新しい順）</li>
+      </ul>
+    </li>
+    <li>[ <strong>制限] </strong> : 選択した条件に基づいて、再生リストに含める動画の最大数を設定します。</li>
+    <li><strong>プレビュー</strong> -条件に一致する動画を一覧表示し、[このプレイリストの動画] ウィンドウに表示します。</li>
+    <li><strong>保存</strong> -変更をコミットし、Video Cloudでプレイリストを更新するプロセスを開始します。注-プレイリストはSharePointに保存されません。</li>
+    <li><strong>プレイリストを削除</strong> -このオプションは、Video Cloud でプレイリストを削除済みとしてマークします。プレイリストは、コネクタのプレイリストに表示されなくなります。</li>
+  </ol>
+</section>
+<section class="bcls-section">
+  <h2 id="embedding">SharePoint サイトにビデオを追加する</h2>
+  <p>SharePoint コネクタを使用すると、コンテンツ作成者はさまざまな方法でサイトにメディアを挿入できます。この章では、使用可能なオプションについて説明します。</p>
+  <h3>オンプレミスの SharePoint 用のBrightcove ブプレーヤ Web パーツ</h3>
+  <p>Brightcove Player Web パーツサンドボックスソリューションは、内部または外部 Web サイトのサイトページに配置された Web パーツを生成し、Brightcove ブの動画を再生します。SharePoint Online では、ユーザーがカスタム Web パーツに追加できる機能が制限されるため、このビデオを挿入するメカニズムは、オンプレミスの SharePoint インストールでのみ使用できます。</p>
+  <p>Web パーツは、アカウント選択や並べ替えによる高度な検索など、管理コンソールでも同様の機能が強化され、動画や再生リストをすばやく検索できます。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-embed-player-sharepoint-page.png"/></figure>
+  <p>プレーヤーの Web パーツオプションを表示するには、SharePoint ページを [編集] モード (1) にする必要があります。これにより、Web パーツを編集するオプションが表示されます (2)。Web パーツ固有のオプションは、Web パーツエディタの「Brightcove の設定」セクション (3) にあります。</p>
+  <p>[Brightcove の設定] セクションを展開すると、Player Web パーツサンドボックスソリューションの最新機能が表示されます。</p>
+  <h4>Web パーツで再生するビデオを選択する</h4>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-embed-player-video-chooser.png"/></figure>
+  <ol class="bcls-tasklist">
+    <li><strong>Brightcove の設定</strong> -Web パーツエディタのこのセクションでは、Web パーツを設定したり、再生する動画/再生リストを選択するためのパラメータにアクセスできます。</li>
+    <li><strong>プレーヤーの幅、プレーヤーの高さ</strong> -プレーヤーの寸法を設定します。</li>
+    <li><strong>プレイヤーID </strong> -使用するプレーヤーの ID を指定します。マルチアカウント環境の場合は、選択した動画と同じアカウントから選択したプレーヤーであることが重要です。プレーヤーには「選択機能」がないため、Video Cloud の ID を手動で入力する必要があります。</li>
+    <li>[ <strong>ビデオ ID </strong> ]-[ビデオ ID] フィールドには、ビデオ選択機能を使用して入力されます。ユーザーがフィールドの右側にある省略記号ボックスをクリックすると、[Chooser] ウィンドウが表示されます。</li>
+    <li><strong>選択ウィンドウ</strong>
+      <ul>
+        <li><strong>アカウントを選択</strong> -現在のユーザーがアクセス権を持っているアカウントを表示します。</li>
+        <li><strong>利用可能なビデオ-動画の結果を</strong>、単語を含むものにフィルタリングします。SharePoint メタデータフィールド (定義されている場合) とともに、名前、タグ、説明情報が検索されます。一度に 1 つのアカウントでのみ検索できます。クロスアカウント検索はサポートされていません。</li>
+        <li><strong>並べ替えと順序</strong></li>
+        <li><strong>ビデオ一覧ウィンドウ</strong> -ビデオをクリックすると、再生のためにそれが選択されます。リストに表示される動画は30本に制限されているため、最初にアカウントを選択したときにアカウント内のすべての動画が表示されるとは限りません。検索機能を使用すると、目的のビデオを見つけるためにリストを絞り込むことができます。</li>
+        <li><strong>「OK」ボタン</strong> -選択を確定し、「ビデオ ID」フィールドに適切な ID 値を入力します。</li>
+      </ul>
+    </li>
+  </ol>
+  <p>プレーヤー ID とビデオ ID が設定されると、Web パーツが構成され、再生の準備が整いました。</p>
+  <h4>Web パーツで再生するプレイリストの選択</h4>
+  <p>再生するプレイリストを選択するプロセスは、ビデオの選択とほぼ同じです。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-embed-player-playlist-chooser.png"/></figure>
+  <ol class="bcls-tasklist">
+    <li><strong>Brightcove の設定</strong> -Web パーツエディタのこのセクションでは、Web パーツを設定したり、再生する動画/再生リストを選択するためのパラメータにアクセスできます。</li>
+    <li><strong>プレーヤーの幅、プレーヤーの高さ</strong> -プレーヤーの寸法を設定します。</li>
+    <li><strong>プレーヤー ID </strong> -使用するプレイリストプレーヤーの ID を指定します。マルチアカウント環境で、プレイリストを表示するように構成されている場合、選択したプレーヤーは選択した動画と同じアカウントのものであることが重要です。プレーヤーには「選択機能」がないため、Video Cloud の ID を手動で入力する必要があります。</li>
+    <li><strong>プレイリスト ID </strong> -ビデオ ID は、ビデオ選択機能を使用して設定されます。ユーザーがフィールドの右側にある省略記号ボックスをクリックすると、[Chooser] ウィンドウが表示されます。</li>
+    <li><strong>選択ウィンドウ</strong>
+      <ul>
+        <li><strong>アカウントを選択</strong> -現在のユーザーがアクセス権を持っているアカウントを表示します。</li>
+        <li><strong>並べ替えと順序</strong></li>
+        <li><strong>プレイリスト一覧ウィンドウ</strong> -プレイリストをクリックすると、そのプレイリストが選択されます。リストに表示されるプレイリストは30個に制限されているため、最初にアカウントを選択したときにアカウント内のすべてのプレイリストが表示されるとは限りません。検索機能を使用すると、リストを絞り込み、目的のプレイリストを見つけることができます。</li>
+        <li><strong>「OK」ボタン</strong> -選択を確定し、「プレイリスト ID」フィールドに適切なID値を入力します。</li>
+      </ul>
+    </li>
+  </ol>
+  <p>プレイリスト ID とビデオ ID が設定されると、Web パーツが構成され、再生の準備が整います。</p>
+  <h3>SharePoint オンラインまたは SharePoint オンプレミス向けのBrightcove ブプレーヤーソリューションパッケージ</h3>
+  <p>Brightcove Player ソリューションパッケージでは、埋め込みコードを [埋め込みコード] ダイアログボックスにコピー/貼り付けするページに埋め込まれた Brightcove 動画用の埋め込みを生成します。このパッケージは、SharePoint Online または SharePoint オンプレミスの両方に使用できます。</p>
+  <h4>用途</h4>
+  <em>SharePoint ボタン</em>
+  <p>SharePoint サイトページを編集すると、リボンに「Brightcove ブ」アクショングループが表示されます。</p>
+  <img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-embed-player-brightcove-action-group.png"/>
+  <p>[Brightcove ブ動画] または [Brightcove ブのプレイリスト] オプションを選択します。</p>
+  <em>選択ダイアログ</em>
+  <p>選択ダイアログでは、ユーザーはビデオまたはプレイリスト（リボンで選択されたオプションに応じて）を選択できます。このダイアログでは、Video Cloud のビデオと再生リストを検索し、結果をグリッドに表示します。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-embed-player-selection-dialog.png"/></figure>
+  <p>ビデオまたはプレイリストを選択すると、ユーザーは必要に応じてプレーヤー、高さ、幅を変更することができます。「OK」をクリックすると、Brightcove ブプレーヤー用のスクリプトが生成され、ダイアログの下部にあるテキストエリアに配置されます。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-embed-player-brightcove-snippet.png"/></figure>
+  <p>このスクリプトは、次の 2 つの方法で SharePoint ページに追加できます。</p>
+  <ul>
+    <li>公開ゾーンに直接入れる</li>
+    <li>スクリプトエディタの Web パーツを使用して、Web パーツのみを許可するページ上で</li>
+  </ul>
+  <p>注-このスクリプトは自動的にユーザーのクリップボードにコピーされます。</p>
+  <em>SharePoint ページにスクリプトを追加する</em>
+  <p class="BCL-aside">注：以下に説明する手順は、発行領域用です。Web パーツのみを許可するページの場合、スクリプトエディタ Web パーツがページ上に配置されると、手順は同じになります。</p>
+  <p>スクリプトをページに追加するには、選択したダイアログから生成されたスクリプトを取得した後、公開ゾーンをクリックします。[挿入] タブから、[コードを埋め込む] ボタンを探します。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-embed-player-embed-code.png"/></figure>
+  <p>表示されたダイアログで、プレーヤー埋め込みスクリプトに貼り付けます。「OK」をクリックします。これにより、ページにスクリプトエディタが挿入されます。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-embed-player-script-editor.png"/></figure>
+  <p>ページを保存すると、そのスクリプトエディタは Brightcove プレーヤーとしてレンダリングされます。</p>
+  <figure><img class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16612-embed-player-rendered-player.png"/></figure>
+</section>
+
+
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">ページコンテンツ</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<footer class="bcls-footer" role="contentinfo">  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Brightcove ブサポート</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">システムステータス</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">サポートへのお問い合わせ</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">ドキュメンテーション</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>トレーニング</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">オンラインコース</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">コースに登録する</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Brightcove University</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">Brightcove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">お問合せ</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">プライバシー</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">利用規約</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>
