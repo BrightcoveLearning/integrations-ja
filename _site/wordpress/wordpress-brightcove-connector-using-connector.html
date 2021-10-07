@@ -1,39 +1,49 @@
-﻿<!doctype html>
-<html lang="ja">
+<!doctype html>
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   
-  <title>ワードプレス-Brightcove コネクタ:コネクタの使用</title>
+  <title>WordPress-Brightcoveコネクタ：コネクタの使用</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">  
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/learning-paths/learning-paths.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
   <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script translate="no">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
+	<script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body class="body">
-
-<header>
+ <header>
   <div class="div-header">
-    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Video_Cloud_Logo.svg" alt="製品ロゴ" style="max-height: 100px;max-width: 232px;"/></a>
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/SVG/COVE004_Brightcove_Video_Cloud_Logo_RGB_K.svg" alt="Brightcove"></a>
 <!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">言語の選択</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+<select onchange="doGTranslate(this);"><option value="">Select Language</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
 
-<script>
+<script translate="no">
 /* <![CDATA[ */
 function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
 /* ]]> */
@@ -41,371 +51,248 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="サポート"/> サポートへのお問い合わせ</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="システムステータス"/> システムステータス</a></span> <br/>
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><i data-feather="help-circle"></i> サポートに連絡する</a><span style="vertical-align: middle;margin-left:1em;margin-right:1em;">| </span><a href="https://status.brightcove.com/"><i data-feather="cloud"></i> システムステータス</a></span>
+    <br>
     
   </div>
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb arr-right">
       
-      <li class="breadcrumb-item"><a href="/">ホーム</a></li>
+      <li class="breadcrumb-item first-item"><a href="/">ホーム</a></li>
+        
+      <li class="breadcrumb-item"><a href="/wordpress/">WordPress</a></li>
       
-      
-      
-      <li class="breadcrumb-item"><a href="/wordpress/">ワードプレス</a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">ワードプレス-Brightcove コネクタ:コネクタの使用</li>
+      <li class="breadcrumb-item active" aria-current="page">WordPress-Brightcoveコネクタ：コネクタの使用</li>
     </ol>
   </nav>
-</header>
-<div class="container">
+</header> <div class="container">
     <div class="row">
-            <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Brightcove のその他のドキュメント</option>
-          
-            
-              <option value="https://support.brightcove.com">ドキュメントホーム</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Brightcove Audience</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Brightcove ビーコン</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Brightcove キャンペーン</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove ・ライブ</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove ギャラリー</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove ソーシャル</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Brightcove のプレーヤー開発</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">Video CloudプラットフォームAPI</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">ビデオクラウドデバイス SDK</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">統合および CMS コネクタ</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">ビデオクラウドの一般情報</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
+      <div class="col-sm-3 left-side-bar">
+				<select id="site_select" class="bcls-select" style="margin-left: 1rem;">
+					<option value="">Brightcoveのその他のドキュメント</option>
+					 
+							<option value="https://support.brightcove.com">ドキュメンテーションホーム</option>
+						  
+							<option value="">-ビデオクラウド-</option>
+						  
+							<option value="https://studio.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドスタジオ</option>
+						  
+							<option value="https://player.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブプレイヤー開発</option>
+						  
+							<option value="https://apis.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドプラットフォームAPI</option>
+						  
+							<option value="https://sdks.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドデバイスSDK</option>
+						  
+							<option value="https://integrations.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;統合とCMSコネクタ</option>
+						  
+							<option value="https://general.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドの一般情報</option>
+						  
+							<option value="">-ビデオエッセンシャル-</option>
+						  
+							<option value="https://beacon.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブビーコン</option>
+						  
+							<option value="https://live.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブライブ</option>
+						  
+							<option value="https://zencoder.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp; Zencoder</option>
+						  
+							<option value="">-ビデオクラウドアドオン-</option>
+						  
+							<option value="https://campaign.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブキャンペーン</option>
+						  
+							<option value="https://engage.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブエンゲージ</option>
+						  
+							<option value="https://gallery.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブギャラリー</option>
+						  
+							<option value="https://studio.support.brightcove.com/social/index.html">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブソーシャル</option>
+						  
+							<option value="https://ssai.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブSSAI</option>
+						 
+				</select>
         <nav class="sidenav" id="side_nav">
-          
-            
+           
             <h5><a href="/index.html">ホーム</a></h5>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/general/index.html">一般情報<strong> + </strong></a></h5>
+              
+              <h5 class="submenu-header"><a href="/general/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;一般情報</a></h5>
               <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/general/cms-integration-training-videos.html">CMS 統合トレーニングビデオ</a></li>
-                  
-                
-                  
-                    <li><a href="/general/integrating-your-cms-video-cloud.html">CMSとビデオクラウドの統合</a></li>
-                  
-                
-                  
-                    <li><a href="/general/embedding-brightcove-players-cms.html">CMS へのBrightcove プレーヤーの埋め込み</a></li>
-                  
-                
-                  
-                    <li><a href="/general/embedding-brightcove-page-experiences-cms.html">CMS へのページ内エクスペリエンスの埋め込み</a></li>
-                  
-                
-                  
-                    <li><a href="/general/debugging-network-and-api-connection-issues-cms-and-dam-integrations.html">ネットワークおよび API 接続の問題のデバッグ</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/wordpress/index.html">ワードプレス<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/wordpress/getting-started-brightcove-video-connect-wordpress-cms.html">Brightcove ビデオコネクトのご利用開始</a></li>
-                  
-                
-                  
-                    <li><a href="/wordpress/wordpress-brightcove-connector-configuration.html">構成</a></li>
-                  
-                
-                  
-                    <li><a href="/wordpress/wordpress-brightcove-connector-frequently-asked-questions.html">よくある質問</a></li>
-                  
-                
-                  
-                    <li><a href="/wordpress/wordpress-brightcove-connector-installation.html">インストール</a></li>
-                  
-                
-                  
-                    <li><a href="/wordpress/wordpress-brightcove-connector-using-connector.html">コネクタの使用</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/drupal/index.html">Drupal <strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/drupal/getting-started-brightcove-video-connect-drupal-cms.html">Drupal用コネクタの使用を開始する</a></li>
-                  
-                
-                  
-                    <li><a href="/drupal/drupal-8-brightcove-connector-configuration.html">Drupal 8-構成</a></li>
-                  
-                
-                  
-                    <li><a href="/drupal/drupal-8-brightcove-connector-content-management.html">Drupal 8-コンテンツ管理</a></li>
-                  
-                
-                  
-                    <li><a href="/drupal/drupal-8-brightcove-connector-embedding-content.html">Drupal 8-コンテンツの埋め込み</a></li>
-                  
-                
-                  
-                    <li><a href="/drupal/drupal-8-brightcove-connector-installation.html">Drupal 8-コネクタのインストール</a></li>
-                  
-                
-                  
-                    <li><a href="/drupal/drupal-7-brightcove-connector-configuration-and-usage.html">Drupal 7-構成と使用方法</a></li>
-                  
-                
-                  
-                    <li><a href="/drupal/drupal-7-brightcove-connector-installation.html">Drupal 7-インストール</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/adobe/index.html"><strong>アドビ+ </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/adobe/getting-started-brightcove-video-connect-adobe-experience-manager.html">AEM 用コネクタの使用を開始する</a></li>
-                  
-                
-                  
-                    <li><a href="/adobe/adobe-aem-brightcove-connector-configuration.html">構成</a></li>
-                  
-                
-                  
-                    <li><a href="/adobe/adobe-aem-brightcove-connector-installation.html">インストール</a></li>
-                  
-                
-                  
-                    <li><a href="/adobe/adobe-aem-brightcove-connector-overview.html">概要</a></li>
-                  
-                
-                  
-                    <li><a href="/adobe/adobe-aem-brightcove-connector-using-connector.html">コネクタの使用</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/sitecore/index.html">Sitecore <strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/sitecore/getting-started-brightcove-video-connect-sitecore-experience-platform.html">サイトコア用コネクタの使用開始</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/sharepoint/index.html">SharePoint <strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/sharepoint/getting-started-brightcove-video-connect-sharepoint.html">Sharepoint 用コネクタの使用を開始する</a></li>
-                  
-                
-                  
-                    <li><a href="/sharepoint/sharepoint-brightcove-connector-4041-using-connector.html">コネクタの使用</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/ecommerce/index.html"><strong>eコマース+ </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/ecommerce/salesforce/index.html">Salesforce コマースクラウド<strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-installation.html">Salesforce コマースクラウド:インストール</a></li>
-                        
-                        <li><a href="/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-user-guide.html">Salesforce コマースクラウド:ユーザーガイド</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/ecommerce/adobe-magento-commerce/index.html">Adobe Magento <strong>コマース+ </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/ecommerce/adobe-magento-commerce/installation-guide.html">インストールガイド</a></li>
-                        
-                        <li><a href="/ecommerce/adobe-magento-commerce/user-guide.html">ユーザーガイド</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/ecdn/index.html">eCDN <strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/ecdn/kollective/index.html">Kollective <strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/ecdn/kollective/kollective-deployment-guide.html">Kollective eCDN デプロイメントガイド</a></li>
-                        
-                        <li><a href="/ecdn/kollective/kollective-user-guide.html">Kollective eCDN ユーザーガイド</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/ecdn/peer5/index.html">ピア5 <strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/ecdn/peer5/brightcove-with-peer5-integration.html">Brightcove と Peer5 インテグレーション</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/ecdn/ramp/index.html">ランプ<strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/ecdn/ramp/getting-started-ramp-omnicache-and-video-cloud.html">ランプ OmniCache とビデオクラウドの開始</a></li>
-                        
-                        <li><a href="/ecdn/ramp/getting-started-ramp-multicast-and-video-cloud.html">Ramp マルチキャスト + とビデオクラウドの開始</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/web-conferencing/index.html">ウェブ会議<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/web-conferencing/host-zoom-conference-brightcove-live.html">Brightcove ライブでズームカンファレンス</a></li>
-                  
-                
-                  
-                    <li><a href="/web-conferencing/host-cisco-webex-conference-brightcove-live.html">シスコの Webex カンファレンス、Brightcove ライブへ</a></li>
-                  
-                
-                  
-                    <li><a href="/web-conferencing/host-avaya-conference-brightcove-live.html">Brightcove ライブのアバイアカンファレンス</a></li>
-                  
-                
-                  
-                    <li><a href="/web-conferencing/host-inxpo-live.html">Brightcove ライブでのINXPO イベント</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/support/index.html"><strong>サポート+ </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
+                 
+                    <li><a href="/general/cms-integration-training-videos.html">CMS統合トレーニングビデオ</a></li>
                     
-                  
-                
-                  
-                    <li><a href="/support/viewing-brightcove-system-status-page.html">Brightcove のシステムステータスページの表示</a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">営業へのお問い合わせ</a></li>
-                  
-                
-                  
-                    <li><a href="/support/opening-case-with-brightcove-support.html">サポートケースを開く</a></li>
-                  
-                
+                    <li><a href="/general/integrating-your-cms-video-cloud.html">CMSとビデオクラウドの統合</a></li>
+                    
+                    <li><a href="/general/embedding-brightcove-players-cms.html">BrightcoveプレーヤーをCMSに埋め込む</a></li>
+                    
+                    <li><a href="/general/embedding-brightcove-page-experiences-cms.html">CMSへのページ内エクスペリエンスの埋め込み</a></li>
+                    
+                    <li><a href="/general/debugging-network-and-api-connection-issues-cms-and-dam-integrations.html">ネットワークとAPI接続の問題のデバッグ</a></li>
+                   
               </ul>
-            
-          
+              
+              <h5 class="submenu-header"><a href="/wordpress/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;WordPress</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/wordpress/getting-started-brightcove-video-connect-wordpress-cms.html">Brightcove VideoConnect入門</a></li>
+                    
+                    <li><a href="/wordpress/wordpress-brightcove-connector-configuration.html">構成</a></li>
+                    
+                    <li><a href="/wordpress/wordpress-brightcove-connector-frequently-asked-questions.html">よくある質問</a></li>
+                    
+                    <li><a href="/wordpress/wordpress-brightcove-connector-installation.html">インストール</a></li>
+                    
+                    <li><a href="/wordpress/wordpress-brightcove-connector-using-connector.html">コネクタの使用</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/drupal/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;Drupal</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/drupal/getting-started-brightcove-video-connect-drupal-cms.html">Drupal用コネクタ入門</a></li>
+                    
+                    <li><a href="/drupal/drupal-8-brightcove-connector-configuration.html">Drupal8-構成</a></li>
+                    
+                    <li><a href="/drupal/drupal-8-brightcove-connector-content-management.html">Drupal8-コンテンツ管理</a></li>
+                    
+                    <li><a href="/drupal/drupal-8-brightcove-connector-embedding-content.html">Drupal8-コンテンツの埋め込み</a></li>
+                    
+                    <li><a href="/drupal/drupal-8-brightcove-connector-installation.html">Drupal8-コネクタのインストール</a></li>
+                    
+                    <li><a href="/drupal/drupal-7-brightcove-connector-configuration-and-usage.html">Drupal7-構成と使用法</a></li>
+                    
+                    <li><a href="/drupal/drupal-7-brightcove-connector-installation.html">Drupal7-インストール</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/adobe/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;Adobe</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/adobe/getting-started-brightcove-video-connect-adobe-experience-manager.html">AEM用コネクタ入門</a></li>
+                    
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-configuration.html">構成</a></li>
+                    
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-installation.html">インストール</a></li>
+                    
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-overview.html">概要</a></li>
+                    
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-using-connector.html">コネクタの使用</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/sitecore/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;Sitecore</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/sitecore/getting-started-brightcove-video-connect-sitecore-experience-platform.html">Sitecore用コネクタ入門</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/sharepoint/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;SharePoint</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/sharepoint/getting-started-brightcove-video-connect-sharepoint.html">SharePoint用コネクタ入門</a></li>
+                    
+                    <li><a href="/sharepoint/sharepoint-brightcove-connector-4041-using-connector.html">コネクタの使用</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/ecommerce/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;eCommerce</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li class="submenu-header">
+                      <a href="/ecommerce/salesforce/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;セールスフォース・コマースクラウド</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-installation.html">Salesforce Commerce Cloud：インストール</a></li>
+                            
+                            <li><a href="/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-user-guide.html">Salesforce Commerce Cloud：ユーザーガイド</a></li>
+                           
+                      </ul>
+                    </li>
+                    
+                    <li class="submenu-header">
+                      <a href="/ecommerce/adobe-magento-commerce/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;Adobe Magento コマース</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/ecommerce/adobe-magento-commerce/installation-guide.html">インストールガイド</a></li>
+                            
+                            <li><a href="/ecommerce/adobe-magento-commerce/user-guide.html">ユーザーガイド</a></li>
+                           
+                      </ul>
+                    </li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/ecdn/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;eCDN</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li class="submenu-header">
+                      <a href="/ecdn/kollective/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;コレクティブ</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/ecdn/kollective/kollective-deployment-guide.html">KollectiveeCDN導入ガイド</a></li>
+                            
+                            <li><a href="/ecdn/kollective/kollective-user-guide.html">Kollective eCDN ユーザーガイド</a></li>
+                           
+                      </ul>
+                    </li>
+                    
+                    <li class="submenu-header">
+                      <a href="/ecdn/peer5/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;Peer5</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/ecdn/peer5/brightcove-with-peer5-integration.html">Brightcoveと Peer5 インテグレーション</a></li>
+                           
+                      </ul>
+                    </li>
+                    
+                    <li class="submenu-header">
+                      <a href="/ecdn/ramp/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;ランプ</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/ecdn/ramp/getting-started-ramp-omnicache-and-video-cloud.html">ランプOmniCacheとビデオクラウド入門</a></li>
+                            
+                            <li><a href="/ecdn/ramp/getting-started-ramp-multicast-and-video-cloud.html">Ramp Multicast +とVideoCloud入門</a></li>
+                           
+                      </ul>
+                    </li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/web-conferencing/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;Web会議</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/web-conferencing/host-zoom-conference-brightcove-live.html">BrightcoveLiveのズーム会議</a></li>
+                    
+                    <li><a href="/web-conferencing/host-cisco-webex-conference-brightcove-live.html">BrightcoveLiveへのCiscoWebex会議</a></li>
+                    
+                    <li><a href="/web-conferencing/host-avaya-conference-brightcove-live.html">ブライトコーブライブでのアバイアカンファレンス</a></li>
+                    
+                    <li><a href="/web-conferencing/host-inxpo-live.html">BrightcoveLiveのINXPOイベント</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/non-brightcove-players/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;ブライトコーブ以外のプレーヤー</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/non-brightcove-players/inplayer.html">InPlayerを使用してBrightcoveコンテンツを配信する</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/support/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;サポート</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">Brightcoveのシステムステータスページの表示</a></li>
+                    
+                    <li><a href="/support/contact-sales.html">営業へのお問い合わせ</a></li>
+                    
+                    <li><a href="/support/opening-case-with-brightcove-support.html">サポートケースを開く</a></li>
+                    
+                    <li><a href="/support/reset-support-portal-password.html">サポートポータルのパスワードをリセットする</a></li>
+                   
+              </ul>
+             
       </nav>
     </div>
     <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
   <!-- bootstrap layout -->
-
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="ナビゲーションメニュー"/></p>
+ <p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Navigation Menu"></p>
 
 <!-- search bar -->
 <div id="nav-search-box" style="margin-top: 1rem;"></div>
@@ -416,82 +303,74 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <ul id="centered_in_page_toc" class="list-none"></ul>
 </details>
 <!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="新しいタブで開く" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
-
-<article class="bcls-article">
-  <h1>ワードプレス-Brightcove コネクタ:コネクタの使用</h1>
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a>  <article class="bcls-article">
+  <h1>WordPress-Brightcoveコネクタ：コネクタの使用</h1>
   <summary>このトピックでは、Wordpress で動画を管理および公開するための Wordpress-Brightcove コネクタの使用方法について説明します。</summary>
   <section class="bcls-section">
     <h2 id="Introduction">はじめに</h2>
-    <p>WordPress-BrightCove コネクタを使用すると、ワードプレス内でBrightcove 動画クラウドの動画とプレーヤーを管理し、WordPress ページに動画を簡単に埋め込むことができます。</p>
+    <p>WordPress-BrightCove コネクタを使用すると、WordPress内でブライトコーブ動画クラウドの動画とプレーヤーを管理し、WordPress ページに動画を簡単に埋め込むことができます。</p>
   </section>
   <section class="bcls-section">
     <h2 id="video_player_publishing">ビデオプレーヤーの公開</h2>
-    <p>動画プレーヤーを公開すると、ユーザーはBrightcove のアカウントから WordPress サイトに動画を簡単に挿入できます。</p>
-    <p>ビデオを投稿するには、新しい投稿ページに移動するだけで開始できます。コア機能では、タイトルの下とエディタの上に「メディアを追加」ボタンがあります。Brightcove ビデオコネクトには、「Brightcove メディア」ボタンもあります。それをクリックすると、Brightcove のメディアモーダルが開きます。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Brightcove の学習サービスメディアを追加するボタン" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/brightcove-media.png"/></figure>
+    <p>動画プレーヤーを公開すると、ユーザーはブライトコーブのアカウントから WordPress サイトに動画を簡単に挿入できます。</p>
+    <p>ビデオを投稿するには、新しい投稿ページに移動するだけで開始できます。コア機能では、タイトルの下とエディタの上に「メディアを追加」ボタンがあります。ブライトコーブビデオコネクトには、「ブライトコーブメディア」ボタンもあります。それをクリックすると、Brightcoveのメディアモーダルが開きます。</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Button to add Brightcove learning-services-media" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/brightcove-media.png" /></figure>
     <p>そこから、ユーザーはそれをクリックして使用したい画像を選択することができます。ビデオのサムネイルがオプションとともに横に表示されます。特定の動画を検索するには、タイトル、タグ、説明で検索できます。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="選択した画像は側面に表示されます" width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/select-videos.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Selected image appears on the side" width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/select-videos.png" /></figure>
     <p>ユーザーは、使用するプレーヤーを選択し、自動再生、埋め込みスタイル、サイズ変更などのオプションをカスタマイズできます。</p>
-    <p>ビデオを挿入するための2つのオプションがあります。「投稿に挿入」ボタンをクリックするだけで、ビデオを投稿に挿入しますが、ユーザーはショートコードをコピーして投稿に貼り付けることもできます。[投稿に挿入] ボタンを使用すると、短いコードはプレーンテキストビューに表示されます。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="ポストにビデオを挿入するためのオプション、ショートコード、ボタン" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/options-shortcode-insert.png"/></figure>
+    <p>ビデオを挿入するには 2 つのオプションがあります。「投稿に挿入」ボタンをクリックするだけで、ビデオを投稿に挿入しますが、ユーザーはショートコードをコピーして投稿に貼り付けることもできます。[投稿に挿入] ボタンを使用すると、短いコードはプレーンテキストビューに表示されます。</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Options, Shortcode, and button to insert video into a post" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/options-shortcode-insert.png" /></figure>
     <p>動画は新しい投稿ページに表示されますが、公開後の状態を確認するには、投稿プレビューを確認してください。それは非常に異なるかもしれません。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="編集ウィンドウ内の画像と投稿された動画を並べて比較します。" width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/preview-vs-post.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="side by side comparison of the image within the edit window and the video posted." width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/preview-vs-post.png" /></figure>
     <section class="bcls-subsection">
       <h3 id="publishing_playlists">プレイリストの公開</h3>
       <p>プレイリストは、単一の動画とまったく同じ方法で公開できます。プレイリストを公開するには、プレイリストが有効な Brightcove プレーヤーが必要です。</p>
     </section>
   </section>
   <section class="bcls-section">
-    <h2 id="video_content_management">動画コンテンツ管理</h2>
+    <h2 id="video_content_management">ビデオコンテンツ管理</h2>
     <p>ユーザーは、動画を Brightcove にアップロードし、WordPress ダッシュボードから直接メタデータを更新できます。</p>
     <section class="bcls-subsection">
       <h3 id="video_upload">ビデオのアップロード</h3>
-      <p>Brightcove に動画をアップロードするには、WordPress のBrightcove 管理ページで [新規追加] をクリックします。</p>
-      <figure class="bcls-figure"><img class="bcls-image" alt="[新規追加] ボタン。" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/add-new.png"/></figure>
+      <p>Brightcoveに動画をアップロードするには、WordPress のBrightcove管理ページで [新規追加] をクリックします。</p>
+      <figure class="bcls-figure"><img class="bcls-image" alt="The add new button." src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/add-new.png" /></figure>
       <p>そこから、ファイルを選択するか、ファイルをページにドラッグしてアップロードできます。一度に複数のファイルを選択してアップロードできます</p>
-      <figure class="bcls-figure"><img class="bcls-image" alt="選択するか、ドラッグアンドドロップします。" width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/drop-files.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image" alt="Select or drag and drop." width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/drop-files.png" /></figure>
       <p>ファイルがページに表示されます。メタデータを追加するには、ファイル名をクリックすると、オプションが開きます。</p>
-      <figure class="bcls-figure">&lt;img クラス= "bcls-image」.= "」alt = "メタデータを追加。」width= "800px」src=」//学習サービス-media.brightcove.com/doc-アセット/ノード/18582-ワードプレス-Brightcove コネクタ-使用-コネクタ/アップロード-with-metadata.png」/&gt;</figure>
+      <figure class="bcls-figure"><img class="bcls-image" .="" alt="Add metadata." width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/upload-with-metadata.png" /></figure>
       <p>準備ができたら、アップロードを開始をクリックします。</p>
       <p>「アップロード」リンクをクリックすると、新しい投稿ページのメディアモーダルから同じ方法で動画をアップロードできます。</p>
     </section>
     <section class="bcls-subsection">
       <h3 id="failure">失敗</h3>
-      <figure class="bcls-figure"><img class="bcls-image" alt="失敗通知" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/unable-to-upload.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image" alt="failure notice" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/unable-to-upload.png" /></figure>
       <p>動画のアップロードに失敗した場合は、ファイル権限に問題がある可能性があります。Web サーバーに wp-content/uploads フォルダに対する読み取り/書き込み権限があることを確認します。動画はここに一時的にアップロードされます。</p>
-      <p>また、Brightcove はファイアウォールの背後から取り込むこともありません。それが問題であれば、新しいビデオは生成されますが、トランスコードされません。</p>
-      <figure class="bcls-figure"><img class="bcls-image" alt="アップロードに失敗しました" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/failed-upload.png"/></figure>
-      <p>回避するには、Brightcove アカウントに移動して、ソースファイルを置き換えます。Brightcove が WordPress から動画を取り込むには、ファイアウォールを開く必要があります。</p>
-      <figure class="bcls-figure"><img class="bcls-image" alt="ソースを置換" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/replace-source.png"/></figure>
+      <p>また、ブライトコーブはファイアウォールの背後から取り込むこともありません。それが問題であれば、新しいビデオは生成されますが、トランスコードされません。</p>
+      <figure class="bcls-figure"><img class="bcls-image" alt="failed upload" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/failed-upload.png" /></figure>
+      <p>回避するには、Brightcove アカウントに移動して、ソースファイルを置き換えます。Brightcoveが WordPress から動画を取り込むには、ファイアウォールを開く必要があります。</p>
+      <figure class="bcls-figure"><img class="bcls-image" alt="replace source" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/replace-source.png" /></figure>
       <p>既存のサムネイルとポスターを保持するためのチェックボックスをオフにすることを忘れないでください。それ以外の場合は、グレーボックスのままになります。</p>
-      <figure class="bcls-figure"><img class="bcls-image" alt="チェックボックスをオフにすると、新しいサムネイルが生成されます。" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/keep-thumbnails.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image" alt="box unchecked so new thumbnails are generated" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/keep-thumbnails.png" /></figure>
       <p>アップロードが完了したら、WordPress でビデオを利用できるようになります。</p>
-      <p>詳細については、「<a href="https://support.brightcove.com/debugging-network-and-api-connection-issues-cms-and-dam-integrations"> CMS および DAM 統合に関するネットワークおよび API 接続に関する問題のデバッグ</a>」を参照してください。</p>
+      <p>詳細については、「CMS および DAM 統合に関するネットワークおよび API <a href="https://support.brightcove.com/debugging-network-and-api-connection-issues-cms-and-dam-integrations">接続に関する問題のデバッグ」を参照してください</a>。</p>
     </section>
     <section class="bcls-subsection">
       <h3 id="metadata">メタデータ</h3>
       <p>WordPressから、ユーザーはビデオの名前、短い説明、長い説明、およびタグを更新することができます。</p>
-      <figure class="bcls-figure"><img class="bcls-image" alt="新しい名前と情報で画面を編集する" width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/edit-screen.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image" alt="edit screen with new name and information" width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/edit-screen.png" /></figure>
       <p>新しいサムネイル、ポスター、キャプショントラックもアップロードできますが、動画のアップロードと同様に、ファイアウォールや権限によってブロックされることがあります。</p>
-      <p><strong>バージョン 1.7.0 </strong>では、ビデオ用に事前定義された Video Cloud フォルダを選択することもできます。この操作は、Wordpress と Video Cloud の両方のフォルダーにビデオを移動します。注：Video Cloud にフォルダを作成する必要があります。</p>
+      <p><strong>バージョン 1.7.0 では</strong>、ビデオ用に事前定義された Video Cloud フォルダを選択することもできます。この操作は、Wordpress と Video Cloud の両方のフォルダーにビデオを移動します。注:Video Cloud にフォルダを作成する必要があります。</p>
       <p>カスタムフィールドを含むその他のメタデータフィールドは、Brightcove Studio で編集する必要があります。</p>
     </section>
     <section class="bcls-subsection">
       <h3 id="deletion">削除</h3>
       <p>ユーザーは編集ページで動画を削除できます。確認のために警告がポップアップ表示されます。</p>
-      <figure class="bcls-figure"><img class="bcls-image" alt="画像の削除" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/delete.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image" alt="delete image" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/delete.png" /></figure>
     </section>
     <section class="bcls-subsection">
       <h3 id="playlist_management">プレイリストの管理</h3>
       <p>WordPressからプレイリストを作成することはできませんが、一度存在すると編集することができます。ビデオは、リスト内で追加または削除したり、上下に移動したりできます。</p>
-      <figure class="bcls-figure"><img class="bcls-image" alt="プレイリストの編集画面" width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/playlists.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image" alt="edit playlist screen" width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/playlists.png" /></figure>
     </section>
     <section class="bcls-subsection">
       <h3 id="players">プレーヤー</h3>
@@ -501,14 +380,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="in-page-experience">ページ内エクスペリエンス</h2>
     <p>Brightcove プラグインは、ページ内エクスペリエンスをサポートしています。このオプションはすべてのユーザーに表示されますが、このオプションは特定のアカウントで利用可能でなければなりません。そうしないと、機能しません。ページ内エクスペリエンスにアクセスできるアカウントのみが Wordpress で使用できます。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="ビデオエクスペリエンスの選択" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/top-bar.png"/></figure>
-    <p>ワードプレスを通じてページ内エクスペリエンスを統合するには、動画体験とプレイリストエクスペリエンスの 2 つの方法があります。ビデオエクスペリエンスを使用して、最初に含めるエクスペリエンスを選択します。サイドバーには、利用可能なエクスペリエンスがリストされたドロップダウンがあります。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="ビデオエクスペリエンスの選択" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/choose-your-experience.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="select video experience" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/top-bar.png" /></figure>
+    <p>WordPressを通じてページ内エクスペリエンスを統合するには、ビデオエクスペリエンスとプレイリストエクスペリエンスの2通りの方法があります。ビデオエクスペリエンスを使用して、最初に含めるエクスペリエンスを選択します。サイドバーには、利用可能なエクスペリエンスがリストされたドロップダウンがあります。</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="select video experience" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/choose-your-experience.png" /></figure>
     <p>動画を選択せずに [投稿に挿入] を押すと、以前に作成したページ内エクスペリエンスが挿入されます。または、いくつかの動画を選択し、次に含めるページ内エクスペリエンスを選択して、それらのビデオをエクスペリエンスに変えます。同様に、プレイリストエクスペリエンスを使用して、プレイリストとエクスペリエンスを選択し、投稿に挿入します。プレイリストはエクスペリエンスに変換されます。</p>
   </section>
-</article>
-
-<!-- complete bootstrap layout -->
+</article> <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
       
@@ -522,11 +399,18 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  ページの最終更新日21 May 2021
+</div>
+
+
+ <footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+        <img src="https://support.brightcove.com/site-assets/images/site/SVG/COVE004_Brightcove_Logo_093020_RGB_KO.svg" class="bc-footer-logo" alt="Brightcove">
 
-        <h2>Brightcove サポート</h2>
+        <h2>ブライトコーブのサポート</h2>
 
         <ul class="menu">
           <li>
@@ -553,14 +437,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <a href="https://studio.support.brightcove.com/training/register-training.html">コースに登録する</a>
           </li>
           <li>
-            <a href="https://university.brightcove.com/">Brightcove University</a>
+            <a href="https://university.brightcove.com/">ブライトコーブ大学</a>
           </li>
         </ul>
 
       </nav>
       <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
 
-        <h2>Brightcove</h2>
+        <h2>ブライトコーブ</h2>
 
         <ul class="menu">
           <li>
@@ -579,12 +463,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <table>
           <tr>
             <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> ブライトコーブ Inc. すべての権利を保有</div>
             </td>
             <td><a href="https://www.brightcove.com/en/legal/privacy">プライバシー</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">利用規約</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><i data-feather="linkedin" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><i data-feather="twitter" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i data-feather="facebook" style="color:#8E9093;height: 1.25rem;"></i></a>
                 </div>
               </div>
             </td>
@@ -595,7 +479,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </div>
 </footer>
 
-<script>
+<script translate="no">
       
   var searchBox = sajari.init({
     mode: "search-box",
@@ -612,8 +496,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     });
   
 
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+</script>   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
@@ -622,17 +505,22 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
   
   <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/learning-paths/learning-paths.js"></script>
   <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
   <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
   <script src="/assets/js/sites_nav.js"></script>
   <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
   <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/sajari-reindex.js"></script>
   <script src="/assets/js/feedback.js"></script>
   
   <script src="/assets/js/sajari-search-foot.js"></script>
   
+	<script translate="no">
+		feather.replace()
+	</script>
   <!-- <script src="/assets/js/sajari-index.js"></script> -->
-  <style>
+  <style translate="no">
     a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
       background-color: lightblue;
     }
@@ -661,4 +549,4 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 </body>
 
-</html>
+</html> 

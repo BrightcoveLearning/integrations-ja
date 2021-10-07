@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>Adobe-AEM-Brightcoveコネクタ：構成</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script translate="no">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
+  <script src="/assets/js/sajari-head.js"></script>
+	<script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+
+<body class="body">
+ <header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/SVG/COVE004_Brightcove_Video_Cloud_Logo_RGB_K.svg" alt="Brightcove"></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Select Language</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script translate="no">
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><i data-feather="help-circle"></i> サポートに連絡する</a><span style="vertical-align: middle;margin-left:1em;margin-right:1em;">| </span><a href="https://status.brightcove.com/"><i data-feather="cloud"></i> システムステータス</a></span>
+    <br>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item first-item"><a href="/">ホーム</a></li>
+        
+      <li class="breadcrumb-item"><a href="/adobe/">Adobe</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Adobe-AEM-Brightcoveコネクタ：構成</li>
+    </ol>
+  </nav>
+</header> <div class="container">
+    <div class="row">
+      <div class="col-sm-3 left-side-bar">
+				<select id="site_select" class="bcls-select" style="margin-left: 1rem;">
+					<option value="">Brightcoveのその他のドキュメント</option>
+					 
+							<option value="https://support.brightcove.com">ドキュメンテーションホーム</option>
+						  
+							<option value="">-ビデオクラウド-</option>
+						  
+							<option value="https://studio.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドスタジオ</option>
+						  
+							<option value="https://player.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブプレイヤー開発</option>
+						  
+							<option value="https://apis.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドプラットフォームAPI</option>
+						  
+							<option value="https://sdks.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドデバイスSDK</option>
+						  
+							<option value="https://integrations.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;統合とCMSコネクタ</option>
+						  
+							<option value="https://general.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドの一般情報</option>
+						  
+							<option value="">-ビデオエッセンシャル-</option>
+						  
+							<option value="https://beacon.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブビーコン</option>
+						  
+							<option value="https://live.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブライブ</option>
+						  
+							<option value="https://zencoder.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp; Zencoder</option>
+						  
+							<option value="">-ビデオクラウドアドオン-</option>
+						  
+							<option value="https://campaign.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブキャンペーン</option>
+						  
+							<option value="https://engage.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブエンゲージ</option>
+						  
+							<option value="https://gallery.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブギャラリー</option>
+						  
+							<option value="https://studio.support.brightcove.com/social/index.html">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブソーシャル</option>
+						  
+							<option value="https://ssai.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブSSAI</option>
+						 
+				</select>
+        <nav class="sidenav" id="side_nav">
+           
+            <h5><a href="/index.html">ホーム</a></h5>
+              
+              <h5 class="submenu-header"><a href="/general/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;一般情報</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/general/cms-integration-training-videos.html">CMS統合トレーニングビデオ</a></li>
+                    
+                    <li><a href="/general/integrating-your-cms-video-cloud.html">CMSとビデオクラウドの統合</a></li>
+                    
+                    <li><a href="/general/embedding-brightcove-players-cms.html">BrightcoveプレーヤーをCMSに埋め込む</a></li>
+                    
+                    <li><a href="/general/embedding-brightcove-page-experiences-cms.html">CMSへのページ内エクスペリエンスの埋め込み</a></li>
+                    
+                    <li><a href="/general/debugging-network-and-api-connection-issues-cms-and-dam-integrations.html">ネットワークとAPI接続の問題のデバッグ</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/wordpress/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;WordPress</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/wordpress/getting-started-brightcove-video-connect-wordpress-cms.html">Brightcove VideoConnect入門</a></li>
+                    
+                    <li><a href="/wordpress/wordpress-brightcove-connector-configuration.html">構成</a></li>
+                    
+                    <li><a href="/wordpress/wordpress-brightcove-connector-frequently-asked-questions.html">よくある質問</a></li>
+                    
+                    <li><a href="/wordpress/wordpress-brightcove-connector-installation.html">インストール</a></li>
+                    
+                    <li><a href="/wordpress/wordpress-brightcove-connector-using-connector.html">コネクタの使用</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/drupal/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;Drupal</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/drupal/getting-started-brightcove-video-connect-drupal-cms.html">Drupal用コネクタ入門</a></li>
+                    
+                    <li><a href="/drupal/drupal-8-brightcove-connector-configuration.html">Drupal8-構成</a></li>
+                    
+                    <li><a href="/drupal/drupal-8-brightcove-connector-content-management.html">Drupal8-コンテンツ管理</a></li>
+                    
+                    <li><a href="/drupal/drupal-8-brightcove-connector-embedding-content.html">Drupal8-コンテンツの埋め込み</a></li>
+                    
+                    <li><a href="/drupal/drupal-8-brightcove-connector-installation.html">Drupal8-コネクタのインストール</a></li>
+                    
+                    <li><a href="/drupal/drupal-7-brightcove-connector-configuration-and-usage.html">Drupal7-構成と使用法</a></li>
+                    
+                    <li><a href="/drupal/drupal-7-brightcove-connector-installation.html">Drupal7-インストール</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/adobe/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;Adobe</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/adobe/getting-started-brightcove-video-connect-adobe-experience-manager.html">AEM用コネクタ入門</a></li>
+                    
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-configuration.html">構成</a></li>
+                    
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-installation.html">インストール</a></li>
+                    
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-overview.html">概要</a></li>
+                    
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-using-connector.html">コネクタの使用</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/sitecore/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;Sitecore</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/sitecore/getting-started-brightcove-video-connect-sitecore-experience-platform.html">Sitecore用コネクタ入門</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/sharepoint/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;SharePoint</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/sharepoint/getting-started-brightcove-video-connect-sharepoint.html">SharePoint用コネクタ入門</a></li>
+                    
+                    <li><a href="/sharepoint/sharepoint-brightcove-connector-4041-using-connector.html">コネクタの使用</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/ecommerce/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;eCommerce</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li class="submenu-header">
+                      <a href="/ecommerce/salesforce/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;セールスフォース・コマースクラウド</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-installation.html">Salesforce Commerce Cloud：インストール</a></li>
+                            
+                            <li><a href="/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-user-guide.html">Salesforce Commerce Cloud：ユーザーガイド</a></li>
+                           
+                      </ul>
+                    </li>
+                    
+                    <li class="submenu-header">
+                      <a href="/ecommerce/adobe-magento-commerce/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;Adobe Magento コマース</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/ecommerce/adobe-magento-commerce/installation-guide.html">インストールガイド</a></li>
+                            
+                            <li><a href="/ecommerce/adobe-magento-commerce/user-guide.html">ユーザーガイド</a></li>
+                           
+                      </ul>
+                    </li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/ecdn/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;eCDN</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li class="submenu-header">
+                      <a href="/ecdn/kollective/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;コレクティブ</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/ecdn/kollective/kollective-deployment-guide.html">KollectiveeCDN導入ガイド</a></li>
+                            
+                            <li><a href="/ecdn/kollective/kollective-user-guide.html">Kollective eCDN ユーザーガイド</a></li>
+                           
+                      </ul>
+                    </li>
+                    
+                    <li class="submenu-header">
+                      <a href="/ecdn/peer5/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;Peer5</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/ecdn/peer5/brightcove-with-peer5-integration.html">Brightcoveと Peer5 インテグレーション</a></li>
+                           
+                      </ul>
+                    </li>
+                    
+                    <li class="submenu-header">
+                      <a href="/ecdn/ramp/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;ランプ</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/ecdn/ramp/getting-started-ramp-omnicache-and-video-cloud.html">ランプOmniCacheとビデオクラウド入門</a></li>
+                            
+                            <li><a href="/ecdn/ramp/getting-started-ramp-multicast-and-video-cloud.html">Ramp Multicast +とVideoCloud入門</a></li>
+                           
+                      </ul>
+                    </li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/web-conferencing/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;Web会議</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/web-conferencing/host-zoom-conference-brightcove-live.html">BrightcoveLiveのズーム会議</a></li>
+                    
+                    <li><a href="/web-conferencing/host-cisco-webex-conference-brightcove-live.html">BrightcoveLiveへのCiscoWebex会議</a></li>
+                    
+                    <li><a href="/web-conferencing/host-avaya-conference-brightcove-live.html">ブライトコーブライブでのアバイアカンファレンス</a></li>
+                    
+                    <li><a href="/web-conferencing/host-inxpo-live.html">BrightcoveLiveのINXPOイベント</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/non-brightcove-players/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;ブライトコーブ以外のプレーヤー</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/non-brightcove-players/inplayer.html">InPlayerを使用してBrightcoveコンテンツを配信する</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/support/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;サポート</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">Brightcoveのシステムステータスページの表示</a></li>
+                    
+                    <li><a href="/support/contact-sales.html">営業へのお問い合わせ</a></li>
+                    
+                    <li><a href="/support/opening-case-with-brightcove-support.html">サポートケースを開く</a></li>
+                    
+                    <li><a href="/support/reset-support-portal-password.html">サポートポータルのパスワードをリセットする</a></li>
+                   
+              </ul>
+             
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+ <p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Navigation Menu"></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">ページコンテンツ</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a>  <article class="bcls-article">
+  <h1>Adobe-AEM-Brightcoveコネクタ：構成</h1>
+  <summary>このトピックでは、Adobe エクスペリエンスマネージャー（AEM）用の Brightcove コネクタの設定について説明します。</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">はじめに</h2>
+    <p>Adobe-AEM Brightcove コネクタを使用すると、AEM 内で Brightcove ビデオクラウドの動画とプレーヤーを管理し、AEM ページに動画を簡単に埋め込むことができます。</p>
+    <aside class="bcls-aside bcls-aside--information">注意:
+			<ul>
+				<li>Adobe Experience Cloud を使用している場合は、追加の構成要件については、<a href="#aem_cloud"> Adobe Experience Cloud</a>のセクションを参照してください。</li>
+				<li>このガイドでは、AEM6.3を使用しています。コネクタはAEM6.2、6.4、および6.5でも機能し、手順は同様です。</li>
+			</ul>
+			 
+		</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="installation_steps">設定手順</h2>
+    <p>以下のセクションでは、クラシックインターフェイスを使用して Adobe-AEM BrightCove コネクタを構成する手順について説明します。これらの手順を完了する前に、コネクタをインストールする必要があります。<a href="/adobe/adobe-aem-brightcove-connector-installation.html"> Adobe-AEM-brightCove コネクタを参照してください。インストール</a></p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Disable_dam_transcoding">DAM トランスコーディングを無効にする</h2>
+    <p>デフォルトでは、AEM DAM にビデオアセットをアップロードすると、バックグラウンドで ffmpeg が実行され、ビデオをさまざまなフォーマットにトランスコードします。&nbsp; DAM にトランスコードされたアセットが不要な場合は、トランスコーディングをオフにして、処理時間とストレージを節約する必要があります。</p>
+    <ol class="bcls-tasklist">
+      <li>AEM ツールを開きます。
+        <figure class="bcls-figure"><img class="bcls-image" src="/assets/images/adobe/node18482-1-aemtools.png" />
+          <figcaption class="bcls-caption--image">AEM ツール</figcaption>
+        </figure>
+      </li>
+      <li>ワークフローを選択:
+        <figure class="bcls-figure"><img class="bcls-image" alt="Workflow Tools" src="/assets/images/adobe/node18482-1-selectworkflow.png" />
+          <figcaption class="bcls-caption--image">ワークフローツール</figcaption>
+        </figure>
+      </li>
+      <li>モデルの選択:
+        <figure class="bcls-figure"><img class="bcls-image" alt="Models Tools" src="/assets/images/adobe/node18482-1-selectmodels.png" />
+          <figcaption class="bcls-caption--image">モデルツール</figcaption>
+        </figure>
+      </li>
+      <li>リストビューの選択:
+        <figure class="bcls-figure"><img class="bcls-image" alt="List View" src="/assets/images/adobe/node18482-1-selectlistview.png" />
+          <figcaption class="bcls-caption--image">リストビュー</figcaption>
+        </figure>
+      </li>
+      <li>DAM 資産の更新を選択します。
+        <figure class="bcls-figure"><img class="bcls-image" alt="DAM Update Asset Configuration" src="/assets/images/adobe/node18482-1-selectdamupdateasset.png" />
+          <figcaption class="bcls-caption--image">DAM 資産設定の更新</figcaption>
+        </figure>
+      </li>
+      <li>[編集] を選択します。
+        <figure class="bcls-figure"><img class="bcls-image" alt="Select Edit" src="/assets/images/adobe/node18482-1-selectedit.png" />
+          <figcaption class="bcls-caption--image">[編集] を選択します</figcaption>
+        </figure>
+      </li>
+      <li>ワークフローから [FFmpeg トランスコーディング] をダブルクリックして編集します。
+        <figure class="bcls-figure"><img class="bcls-image" alt="Select FFmpeg Transcoding" src="/assets/images/adobe/node18482-1-selecttranscoding.png" />
+          <figcaption class="bcls-caption--image">FFmpeg トランスコーディングを選択</figcaption>
+        </figure>
+      </li>
+      <li>[ステッププロパティ] ダイアログで [プロセス] タブを選択します。
+        <figure class="bcls-figure"><img class="bcls-image" alt="Select Process Tab" src="/assets/images/adobe/node18482-selectprocesstab.png" />
+          <figcaption class="bcls-caption--image">[プロセス] タブを選択</figcaption>
+        </figure>
+      </li>
+      <li>プロセスを「<strong>オペレーションなし」に変更します</strong>。
+        <figure class="bcls-figure"><img class="bcls-image" alt="Change the Process" src="/assets/images/adobe/node18482-changeprocess.png" />
+          <figcaption class="bcls-caption--image">プロセスを変更する</figcaption>
+        </figure>
+      </li>
+      <li>OK をクリックしてダイアログを閉じ、変更を保存します。
+        <figure class="bcls-figure"><img class="bcls-image" alt="Save Changes" src="/assets/images/adobe/node18482-saveworkflow.png" />
+          <figcaption class="bcls-caption--image">変更の保存</figcaption>
+        </figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <p>ローカルでトランスコードされたビデオアセットが必要な場合は、AEM サーバーに ffmpeg がインストールされていることを確認する必要があります。</p>
+    <ol class="bcls-tasklist">
+      <li>コマンドラインを開いて次のように入力して、<a href="https://www.ffmpeg.org"> FFmpeg</a>がインストールされていることを確認します。
+        <pre>
+<code class="language-bash" translate="No">ffmpeg</code></pre>
+      </li>
+      <li><code translate="No">ffmpeg</code>コマンドが見つからない場合は、インストールする必要があります。
+        <ul>
+          <li><a href="https://github.com/fluent-ffmpeg/node-fluent-ffmpeg/wiki/Installing-ffmpeg-on-Mac-OS-X">Macにインストールする</a></li>
+          <li><a href="https://github.com/adaptlearning/adapt_authoring/wiki/Installing-FFmpeg">Windowsにインストールする</a></li>
+          <li><a href="https://www.ostechnix.com/install-ffmpeg-linux/">Linuxにインストールする</a></li>
+        </ul>
+      </li>
+    </ol>
+    <h2 id="add_account_information">アカウント情報を入力してください</h2>
+    <p>これで、Video Cloud アカウント情報を使用して AEM BrightCove コネクタを設定する準備ができました。</p>
+    <ol class="bcls-tasklist">
+      <li>AEM Web コンソール設定マネージャーを開きます（http://localhost:4502/system/console/configMgr）</li>
+      <li><strong>Brightcove サービスを検索して</strong>、サービスを見つけます。
+        <figure class="bcls-figure"><img class="bcls-image" alt="Find Brightcove Service" src="/assets/images/adobe/node18482-1-findbrightcoveservice.png" />
+          <figcaption class="bcls-caption--image">Brightcoveサービスの検索</figcaption>
+        </figure>
+      </li>
+      <li><code translate="No">+</code>記号をクリックして、新しい設定を追加します。
+        <figure class="bcls-figure"><img class="bcls-image" alt="Add Configuration" src="/assets/images/adobe/node18482-1-addnewconfig.png" />
+          <figcaption class="bcls-caption--image">設定の追加</figcaption>
+        </figure>
+      </li>
+      <li>ダイアログでは、下図のように値を入力します。見る<a href="https://apis.support.brightcove.com/general/managing-api-authentication-credentials.html">API認証クレデンシャルの管理</a>クライアントIDとクライアントシークレットを取得する手順については。ここで必要な権限は次のとおりです。
+        <figure class="bcls-figure"><img class="bcls-image" alt="Require API Permissions" src="/assets/images/adobe/node18482-1-apipermissions.png" />
+          <figcaption class="bcls-caption--image">必要な API アクセス許可</figcaption>
+        </figure>
+        <ul>
+          <li>設定フォームの推奨値は次のとおりです。
+            <ul>
+              <li><strong>アカウントエイリアス</strong> :コネクタに表示するアカウントの名前を入力します (必須)</li>
+              <li><strong>アカウント ID</strong> : ブライトコーブのパブリッシャー ID を入力します (必須)</li>
+              <li><strong>クライアント ID</strong> : ブライトコーブ API 認証ページから Brightcove クライアント ID を入力します (必須)</li>
+              <li><strong>クライアントシークレット</strong> :ブライトコーブのクライアントシークレット API を入力します (必須)</li>
+              <li><strong>[許可されたグループ]</strong> : コネクタにアクセスするグループを指定します (必須)。コネクタが所属するグループであることを確認します。</li>
+              <li><strong>Players Store Path</strong> : このブライトコーブアカウントのプレイヤーにデフォルト値を維持するか、&nbsp;選択したフォルダを使用します (必須)</li>
+              <li><strong>デフォルトのビデオプレーヤー ID</strong> : デフォルト値を維持するか、別のプレーヤー ID を選択します (必須)</li>
+              <li><strong>デフォルトのビデオプレーヤーキー</strong> :非推奨、空白のままにするか、前のコネクタの値を使用</li>
+              <li><strong>デフォルトのプレイリストプレーヤー ID</strong> : プレイリストを使用する予定の場合は、プレイリストに対して有効になっているプレイヤー ID を入力します (必須)</li>
+              <li><strong>デフォルトのプレイリストプレーヤーキー</strong> :非推奨、空白のままにするか、前のコネクタの値を使用</li>
+              <li><strong>プロキシサーバー</strong> :以前にプロキシを使用していた場合は、空白のままにするか、プロキシを入力します。</li>
+              <li><strong>ダム統合パス</strong> :このブライトコーブアカウントのビデオアセットにデフォルト値を維持するか、または選択したフォルダを使用します (必須)</li>
+              <li><strong>取り込みプロファイル</strong>：アップロードされた動画に使用するブライトコーブの取り込みプロファイルを指定し、空白の値はデフォルトプロファイルを使用します。空白/デフォルトが機能しない場合は、Brightcove のサポートに Video Cloud バックエンドでデフォルトプロファイルが定義されていることを確認してください</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>設定をテストします。&nbsp; http://localhost:4502/brightcove/admin を参照して、右上隅のプルダウンで追加した Brightcove アカウントを選択します。&nbsp;動画が表示されない場合は、以下のいずれかの理由が原因である可能性があります。
+        <ol>
+          <li>API <strong>&nbsp;認証情報アカウント ID</strong>、<strong>クライアント ID</strong>、<strong></strong>&nbsp;およびクライアントシークレットが登録されている可能性がありますコネクタ構成に正しく入力されていません</li>
+          <li>ブライトコーブで API 認証情報が適切に設定されていません</li>
+          <li>現在ログインしているユーザーは、<strong></strong>&nbsp;コネクタ構成で許可されたグループのメンバーではありません。</li>
+          <li>ネットワーク設定により、ブライトコーブのクラウドサーバへの API アクセスがブロックされています。詳細は、<a href="/general/debugging-network-and-api-connection-issues-cms-and-dam-integrations.html">「ネットワークおよび API 接続の問題のデバッグ」</a>を参照してください。</li>
+        </ol>
+      </li>
+      <li>複数の Video Cloud アカウントを使用する場合は、アカウントごとに前の手順を繰り返します。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="set_up_players">ブライトコーブプレーヤーをセットアップする</h2>
+    <p>最後の設定タスクは、Brightcove プレーヤーをセットアップすることです。</p>
+    <ol class="bcls-tasklist">
+      <li>サイト管理ツール（クラシック UI では http://localhost:4502/siteadmin#/content、タッチ UI では http://localhost:4502/sites.html/content）に移動します。</li>
+      <li>最上位の Web サイトフォルダーで、設定の&nbsp;<strong>Players </strong>&nbsp;ストアパスに一致する新しいフォルダーを作成します。&nbsp;デフォルトでは、&nbsp;<strong></strong>&nbsp;構成内のフォルダ名はbrightcovetoolsと呼ばれ、<strong>内部にプレイヤーと呼ばれるフォルダがあります</strong>。&nbsp;複数の Brightcove アカウントに接続する場合は、アカウントごとに一意のプレーヤーフォルダーを作成したい場合があります。</li>
+      <li><strong>プレーヤーフォルダ内に新しい</strong> Brightcove プレーヤーページを作成します。
+        <figure class="bcls-figure"><img class="bcls-image" alt="Player Page Creation" src="/assets/images/adobe/node18482-1-playerpage.png" />
+          <figcaption class="bcls-caption--image">プレイヤーページ作成</figcaption>
+        </figure>
+      </li>
+      <li>ページを作成したら、そのページを右クリックし、クラシック UI のメニューから [プロパティ] を選択します。タッチ UI でページを選択し、[プロパティ] をクリックします。</li>
+      <li>ダイアログの [Brightcove Basic] タブと Brightcove アカウントに移動し、リストからプレーヤーを選択します。
+        <figure class="bcls-figure"><img class="bcls-image" alt="Select Player" src="/assets/images/adobe/node18482-1-selectplayer.png" />
+          <figcaption class="bcls-caption--image">プレーヤーの選択</figcaption>
+        </figure>
+      </li>
+      <li>複数のプレーヤーを公開できるようにする場合は、上記の手順を繰り返して、各プレイヤー用のページを作成します。</li>
+      <li>プレイリストも使用する場合は、上記の手順を繰り返して、プレイリストプレーヤー用のページを作成します。</li>
+      <li>複数の Brightcove アカウントを使用している場合は、アカウントごとにプレーヤーページを作成する必要があります。</li>
+    </ol>
+    <h2 id="activate_metadata_schema">Brightcove アセットロケーションのメタデータスキーマをアクティブ化</h2>
+    <p>V5.4 以降のコネクタで Touch UI を使用している場合は、ブライトコーブアセットの場所のメタデータスキーマをアクティブ化する必要があります。&nbsp;&nbsp;クラシック UI のみを使用している場合、これは必要ありません。&nbsp;次の手順で、メタデータスキーマをアクティブ化します。</p>
+    <ol class="bcls-tasklist">
+      <li>AEM ツールを開きます。
+        <figure class="bcls-figure"><img class="bcls-image" width="300px" src="/assets/images/adobe/node18482-1-tools.png" />
+          <figcaption class="bcls-caption--image">AEM ツール</figcaption>
+        </figure>
+      </li>
+      <li>アセットの選択:
+        <figure class="bcls-figure"><img class="bcls-image" width="300px" src="/assets/images/adobe/node18482-2-assets.png" />
+          <figcaption class="bcls-caption--image">アセット</figcaption>
+        </figure>
+      </li>
+      <li>メタデータスキーマの選択:
+        <figure class="bcls-figure"><img class="bcls-image" width="500px" src="/assets/images/adobe/node18482-3-metadata-schemas.png" />
+          <figcaption class="bcls-caption--image">メタデータスキーマ</figcaption>
+        </figure>
+      </li>
+      <li>[Brightcove] を選択し、[フォルダに適用] をクリックします。
+        <figure class="bcls-figure"><img class="bcls-image" width="500px" src="/assets/images/adobe/node18482-4-select-brightcove-apply.png" />
+          <figcaption class="bcls-caption--image">Brightcoveを選択</figcaption>
+        </figure>
+      </li>
+      <li>brightcove_assets フォルダーが存在しない場合は、brightcove_assets という名前のフォルダーを作成します。
+        <figure class="bcls-figure"><img class="bcls-image" width="300px" src="/assets/images/adobe/node18482-5-create.png" />
+          <figcaption class="bcls-caption--image">作成</figcaption>
+        </figure>
+      </li>
+      <li>「brightcove_assets」という名前を入力してください:
+        <figure class="bcls-figure"><img class="bcls-image" width="300px" src="/assets/images/adobe/node18482-6-brightcove-assets.png" />
+          <figcaption class="bcls-caption--image">Brightcove_アセットフォルダを作成する</figcaption>
+        </figure>
+      </li>
+      <li>brightcove_assets を選択し、「適用」をクリックします。
+        <figure class="bcls-figure"><img class="bcls-image" width="600px" src="/assets/images/adobe/node18482-7-select-brightcove-assets-apply.png" />
+          <figcaption class="bcls-caption--image">Brightcoveアセットの選択</figcaption>
+        </figure>
+      </li>
+    </ol>
+    <p>これで、AEM-BrightCove コネクタの設定が完了しました。<a href="/adobe/adobe-aem-brightcove-connector-using-connector.html">コネクタの使用に進みます</a>。</p>
+  </section>
+	<section class="bcls-section">
+		<h2 id="aem_cloud">Adobe Experience Cloud</h2>
+		<p>AEMクラウドでBrightcoveコネクタを使用するには、いくつかの構成変更が必要です。</p>
+		<ol class="bcls-tasklist-restart">
+			<li>
+				デプロイメントの一部として、アカウント情報を定義するためのOSGI構成を含めます。これには、以前のBrightcoveバージョンとすべて同じ情報が含まれていますが、ui.configプロジェクトなどにデプロイする必要があります。
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/adobe/config-mgr-account.png" alt="OSGI Configuration">
+					<figcaption class="bcls-caption--image">OSGI構成</figcaption>
+				</figure>
+			</li>
+			<li>
+				アセットの更新を公開するときにBrightcoveと同期する場合は、デプロイメントの一部としてレプリケーションリスナーのOSGI構成を含めます。これは、以前のコネクタバージョンに含まれていた非推奨のカスタムレプリケーションエージェントに代わるものです。
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/adobe/config-mgr-listener.png" alt="Replication Listener">
+					<figcaption class="bcls-caption--image">レプリケーションリスナー</figcaption>
+				</figure>
+			</li>
+			<li>
+				DAM内のすべてのBrightcoveアカウントフォルダーに対して、DAM Set最終変更日ワークフローランチャーを必ず有効にしてください。これは、最新のクラウドインスタンスではデフォルトで無効になっています。
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/adobe/enable-last-modified-date.png" alt="Enable Set Last Modified Date">
+					<figcaption class="bcls-caption--image">最終変更日の設定を有効にする</figcaption>
+				</figure>
+			</li>
+			<li>
+				以前のバージョンと同様に、コネクタには（オプションの）自動メタデータスキーマタブが付属しています。これを自動的に適用する代わりに、このスキーマを選択して、Brightcoveフォルダーに手動で適用する必要があります。
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/adobe/apply-schema.png" alt="Automatic MetaData Schema">
+					<figcaption class="bcls-caption--image">自動メタデータスキーマ</figcaption>
+				</figure>
+			</li>
+			<li>
+				このアップデートにはJava11が必要です。必要に応じてバージョンを更新してください。
+			</li>
+			<li>
+				この依存関係パッケージをMavenプロジェクトに埋め込む必要があります。パッケージは、ベンダーから提供されているように、pom.xmlで依存関係として参照する必要があります。 
+			</li>
+			<li>
+				これを行うには、以下の例のように、pom.xml内でローカルファイルリポジトリを使用できます。
+<pre class="line-numbers"><code class="language-xml"> &lt; リポジトリ &gt;  &lt; リポジトリ &gt;  &lt;  ID &gt;my-local-repo  &lt;  /id &gt;  &lt;  url&gt;ファイル://$ {project.basedir} /my-repo  &lt;  /url &gt;  &lt;  /リポジトリ &gt;  &lt;  /repositories &gt;</code></pre>
+			</li>
+			<li>
+				次に、次のコマンドを使用してコネクタパッケージをインストールできます。
+<pre><code translate="no">mvn org.apache.maven.plugins：maven-install-plugin：2.3.1：install-file \\ -Dfile =&lt;ファイルへのパス&gt;-DgroupId = com.coresecure \\ -DartifactId = brightcove.connector -Dversion = 1.0.0 \\ -Dpackaging = jar -DlocalRepositoryPath =&lt;パス定義-上記&gt;</code></pre>
+			</li>
+			<li>
+				最後に、pom.xmlの依存関係セクションを介してローカルにインストールされたパッケージを参照する必要があります。
+<pre class="line-numbers"><code class="language-xml"> &lt;  &lt;  dependency &gt; groupID &gt;com.coresecure  &lt;  /groupID &gt;  &lt;  artifactID &gt;brightCove.Connector  &lt;  /artifactID &gt;  &lt; バージョン&gt;1.0.0  &lt;  /version &gt;  &lt;  /依存関係 &gt;</code></pre>
+			</li>
+	</ol>
+	</section>
+</article> <!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">ページコンテンツ</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<div class="last-updated">
+  ページの最終更新日07 Oct 2021
+</div>
+
+
+ <footer class="bcls-footer" role="contentinfo">
+  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+        <img src="https://support.brightcove.com/site-assets/images/site/SVG/COVE004_Brightcove_Logo_093020_RGB_KO.svg" class="bc-footer-logo" alt="Brightcove">
+
+        <h2>ブライトコーブのサポート</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">システムステータス</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">サポートへのお問い合わせ</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">ドキュメンテーション</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>トレーニング</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">オンラインコース</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">コースに登録する</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">ブライトコーブ大学</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>ブライトコーブ</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">Brightcove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">お問合せ</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> ブライトコーブ Inc. すべての権利を保有</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">プライバシー</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">利用規約</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><i data-feather="linkedin" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><i data-feather="twitter" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i data-feather="facebook" style="color:#8E9093;height: 1.25rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script translate="no">
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/learning-paths/learning-paths.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/sajari-reindex.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+	<script translate="no">
+		feather.replace()
+	</script>
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style translate="no">
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html> 

@@ -1,453 +1,33 @@
-﻿<!doctype html>
-<html lang="ja">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="このトピックでは、Ramp AltitudecDN™ マルチキャスト+ eCDN ソリューションを Brightcove Video Cloud で使用する方法の概要を説明します。">
-  
-  <title>Ramp マルチキャスト + とビデオクラウドの開始</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
-  <script src="/assets/js/sajari-head.js"></script>
-</head>
-
-<body class="body">
-
-<header>
-  <div class="div-header">
-    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Video_Cloud_Logo.svg" alt="製品ロゴ" style="max-height: 100px;max-width: 232px;"/></a>
-<!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">言語の選択</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
-
-<script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
-</script>
-
-
-
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="サポート"/> サポートへのお問い合わせ</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="システムステータス"/> システムステータス</a></span> <br/>
-    
-  </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-      
-      <li class="breadcrumb-item"><a href="/">ホーム</a></li>
-      
-      
-      
-      <li class="breadcrumb-item"><a href="/ecdn/ramp/">ランプ</a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">Ramp マルチキャスト + とビデオクラウドの開始</li>
-    </ol>
-  </nav>
-</header>
-<div class="container">
-    <div class="row">
-            <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Brightcove のその他のドキュメント</option>
-          
-            
-              <option value="https://support.brightcove.com">ドキュメントホーム</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Brightcove Audience</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Brightcove ビーコン</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Brightcove キャンペーン</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove ・ライブ</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove ギャラリー</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove ソーシャル</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Brightcove のプレーヤー開発</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">Video CloudプラットフォームAPI</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">ビデオクラウドデバイス SDK</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">統合および CMS コネクタ</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">ビデオクラウドの一般情報</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
-        <nav class="sidenav" id="side_nav">
-          
-            
-            <h5><a href="/index.html">ホーム</a></h5>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/general/index.html">一般情報<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/general/cms-integration-training-videos.html">CMS 統合トレーニングビデオ</a></li>
-                  
-                
-                  
-                    <li><a href="/general/integrating-your-cms-video-cloud.html">CMSとビデオクラウドの統合</a></li>
-                  
-                
-                  
-                    <li><a href="/general/embedding-brightcove-players-cms.html">CMS へのBrightcove プレーヤーの埋め込み</a></li>
-                  
-                
-                  
-                    <li><a href="/general/embedding-brightcove-page-experiences-cms.html">CMS へのページ内エクスペリエンスの埋め込み</a></li>
-                  
-                
-                  
-                    <li><a href="/general/debugging-network-and-api-connection-issues-cms-and-dam-integrations.html">ネットワークおよび API 接続の問題のデバッグ</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/wordpress/index.html">ワードプレス<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/wordpress/getting-started-brightcove-video-connect-wordpress-cms.html">Brightcove ビデオコネクトのご利用開始</a></li>
-                  
-                
-                  
-                    <li><a href="/wordpress/wordpress-brightcove-connector-configuration.html">構成</a></li>
-                  
-                
-                  
-                    <li><a href="/wordpress/wordpress-brightcove-connector-frequently-asked-questions.html">よくある質問</a></li>
-                  
-                
-                  
-                    <li><a href="/wordpress/wordpress-brightcove-connector-installation.html">インストール</a></li>
-                  
-                
-                  
-                    <li><a href="/wordpress/wordpress-brightcove-connector-using-connector.html">コネクタの使用</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/drupal/index.html">Drupal <strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/drupal/getting-started-brightcove-video-connect-drupal-cms.html">Drupal用コネクタの使用を開始する</a></li>
-                  
-                
-                  
-                    <li><a href="/drupal/drupal-8-brightcove-connector-configuration.html">Drupal 8-構成</a></li>
-                  
-                
-                  
-                    <li><a href="/drupal/drupal-8-brightcove-connector-content-management.html">Drupal 8-コンテンツ管理</a></li>
-                  
-                
-                  
-                    <li><a href="/drupal/drupal-8-brightcove-connector-embedding-content.html">Drupal 8-コンテンツの埋め込み</a></li>
-                  
-                
-                  
-                    <li><a href="/drupal/drupal-8-brightcove-connector-installation.html">Drupal 8-コネクタのインストール</a></li>
-                  
-                
-                  
-                    <li><a href="/drupal/drupal-7-brightcove-connector-configuration-and-usage.html">Drupal 7-構成と使用方法</a></li>
-                  
-                
-                  
-                    <li><a href="/drupal/drupal-7-brightcove-connector-installation.html">Drupal 7-インストール</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/adobe/index.html"><strong>アドビ+ </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/adobe/getting-started-brightcove-video-connect-adobe-experience-manager.html">AEM 用コネクタの使用を開始する</a></li>
-                  
-                
-                  
-                    <li><a href="/adobe/adobe-aem-brightcove-connector-configuration.html">構成</a></li>
-                  
-                
-                  
-                    <li><a href="/adobe/adobe-aem-brightcove-connector-installation.html">インストール</a></li>
-                  
-                
-                  
-                    <li><a href="/adobe/adobe-aem-brightcove-connector-overview.html">概要</a></li>
-                  
-                
-                  
-                    <li><a href="/adobe/adobe-aem-brightcove-connector-using-connector.html">コネクタの使用</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/sitecore/index.html">Sitecore <strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/sitecore/getting-started-brightcove-video-connect-sitecore-experience-platform.html">サイトコア用コネクタの使用開始</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/sharepoint/index.html">SharePoint <strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/sharepoint/getting-started-brightcove-video-connect-sharepoint.html">Sharepoint 用コネクタの使用を開始する</a></li>
-                  
-                
-                  
-                    <li><a href="/sharepoint/sharepoint-brightcove-connector-4041-using-connector.html">コネクタの使用</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/ecommerce/index.html"><strong>eコマース+ </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/ecommerce/salesforce/index.html">Salesforce コマースクラウド<strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-installation.html">Salesforce コマースクラウド:インストール</a></li>
-                        
-                        <li><a href="/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-user-guide.html">Salesforce コマースクラウド:ユーザーガイド</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/ecommerce/adobe-magento-commerce/index.html">Adobe Magento <strong>コマース+ </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/ecommerce/adobe-magento-commerce/installation-guide.html">インストールガイド</a></li>
-                        
-                        <li><a href="/ecommerce/adobe-magento-commerce/user-guide.html">ユーザーガイド</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/ecdn/index.html">eCDN <strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/ecdn/kollective/index.html">Kollective <strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/ecdn/kollective/kollective-deployment-guide.html">Kollective eCDN デプロイメントガイド</a></li>
-                        
-                        <li><a href="/ecdn/kollective/kollective-user-guide.html">Kollective eCDN ユーザーガイド</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/ecdn/peer5/index.html">ピア5 <strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/ecdn/peer5/brightcove-with-peer5-integration.html">Brightcove と Peer5 インテグレーション</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/ecdn/ramp/index.html">ランプ<strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/ecdn/ramp/getting-started-ramp-omnicache-and-video-cloud.html">ランプ OmniCache とビデオクラウドの開始</a></li>
-                        
-                        <li><a href="/ecdn/ramp/getting-started-ramp-multicast-and-video-cloud.html">Ramp マルチキャスト + とビデオクラウドの開始</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/web-conferencing/index.html">ウェブ会議<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/web-conferencing/host-zoom-conference-brightcove-live.html">Brightcove ライブでズームカンファレンス</a></li>
-                  
-                
-                  
-                    <li><a href="/web-conferencing/host-cisco-webex-conference-brightcove-live.html">シスコの Webex カンファレンス、Brightcove ライブへ</a></li>
-                  
-                
-                  
-                    <li><a href="/web-conferencing/host-avaya-conference-brightcove-live.html">Brightcove ライブのアバイアカンファレンス</a></li>
-                  
-                
-                  
-                    <li><a href="/web-conferencing/host-inxpo-live.html">Brightcove ライブでのINXPO イベント</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/support/index.html"><strong>サポート+ </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                  
-                
-                  
-                    <li><a href="/support/viewing-brightcove-system-status-page.html">Brightcove のシステムステータスページの表示</a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">営業へのお問い合わせ</a></li>
-                  
-                
-                  
-                    <li><a href="/support/opening-case-with-brightcove-support.html">サポートケースを開く</a></li>
-                  
-                
-              </ul>
-            
-          
-      </nav>
-    </div>
-    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
-  <!-- bootstrap layout -->
-
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="ナビゲーションメニュー"/></p>
-
-<!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;"></div>
-<!-- in-page navigation for narrow screens -->
-<details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">ページコンテンツ</h6></summary>
-  <nav id="centered_toc"></nav>
-  <ul id="centered_in_page_toc" class="list-none"></ul>
-</details>
-<!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="新しいタブで開く" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
-
+---
+title: 'Ramp Multicast+ '
+description: 'とビデオクラウドの使用開始このトピックでは、ブライトコーブビデオクラウドでの Ramp AltitudeCDN™ Multicast+ eCDN ソリューションの使用の概要について説明します。'
+parent: Ramp
+---
 <article class="bcls-article">
-  <h1>Ramp マルチキャスト + とビデオクラウドの開始</h1>
+  <h1>{{ page.title }}</h1>
   <summary>
-    <p>このトピックでは、Ramp AltitudecDN™ マルチキャスト+ eCDN ソリューションを Brightcove Video Cloud で使用する方法の概要を説明します。</p>
+    <p>{{ page.description }}</p>
   </summary>
   <section class="bcls-section">
     <h2 id="introduction">はじめに</h2>
 
-    <p>ランプの&nbsp;<a href="https://ramp.com/product/altitudecdn/multicast/"> AltituDeCDN™ Multicast+ </a>&nbsp;製品は、&nbsp;マルチキャスト対応ネットワークを利用して、ローカルネットワーク、インターネットゲートウェイ、および&nbsp;&nbsp;企業ネットワーク内の制限された帯域幅リンク。Multicast+ では、Brightcove Player &nbsp;を使用するクライアントデスクトップコンピュータは、ローカルコンピュータ上の Multicast+ レシーバクライアントからストリームをプルします。このクライアントでは、Multicast+ サーバによってネットワーク上に配信されるライブストリームに「チューニング」されます。&nbsp; Multicast+ サーバは、Brightcove  CDN またはオンプレミスのストリーミングサーバからライブストリームを引き出します。Multicast+ は、ソフトウェアアプライアンスとして提供される完全にオンプレミスのソリューションであり、AltituDeCDN™ Altimeter 管理コンソールで管理されます。&nbsp; Multicast+ は、スタンドアロンで使用することも、ユニキャスト/マルチキャストネットワークが混在する場合は&nbsp; AltituDeCDN™ Omnicache &nbsp;と共に使用することもできます。</p>
+    <p>Ramp の&nbsp;<a href="https://ramp.com/product/altitudecdn/multicast/">AltitudeCDN™ Multicast+ </a>&nbsp;製品は、マルチキャスト対応ネットワークを利用して、&nbsp;エンタープライズライブビデオ配信システムで、&nbsp;ローカルネットワーク、インターネットゲートウェイ、&nbsp;およびエンタープライズネットワーク内の制限された帯域幅リンクを介したビデオトラフィックを削減します。Multicast+ を使用すると、&nbsp;ブライトコーブプレーヤーを使用するクライアントデスクトップコンピューターは、ローカルコンピューター上の Multicast+ レシーバクライアントからストリームをプルし、Multicast+ サーバーによってネットワーク上で配信されるライブストリームに「チューンイン」します。&nbsp; Multicast+ サーバーは、ブライトコーブ CDN またはオンプレミスストリーミングサーバーからライブストリームを取得します。Multicast+ は、ソフトウェアアプライアンスとして提供される完全にオンプレミスのソリューションであり、AltituDeCDN™ Altimeter 管理コンソールで管理されます。&nbsp; Multicast+ は、スタンドアロンで使用することも、&nbsp; AltitudeCDN™ Omnicache &nbsp;と併用して、ユニキャスト/マルチキャストネットワークを混在させることができます。</p>
 
-    <p>Brightcove との統合では、<a href="https://livetools.ramp.com/omnicache/plugin/multicastplugin.js"> Multicast+ Video.js プラグインを使用して</a>、ストリーム URL をローカルの Multicast+ レシーバクライアントサーバに書き換えます。&nbsp; Video Cloud で使用する Multicast+ サーバーの設定の詳細については、この<a target="_blank" href="https://files.brightcove.com/Altitude%20CDN_OmniCache_Brightcove_TechNote_v14.pdf"> TechnoTE From </a> Ramp を参照してください。
+    <p>ブライトコーブとの統合では、<a href="https://livetools.ramp.com/omnicache/plugin/multicastplugin.js"> Multicast+ Video.js</a>プラグインを使用して、ストリーム URL をローカル Multicast+ レシーバクライアントサーバーに書き換えます。&nbsp; Video Cloud で使用する Multicast+ サーバーの設定の詳細については、Ramp <a target="_blank" href="https://files.brightcove.com/Altitude%20CDN_OmniCache_Brightcove_TechNote_v14.pdf"></a>のテクニカルノートを参照してください。
     </p>
 
     <p>以下の手順に進む前に、Ramp チームで Multicast+ クイックスタートプロセスを完了し、Multicast+ サーバー、ローカル Multicast+ レシーバ、&nbsp;およびローカルネットワークが正しく設定されていることを確認してください。</p>
     <section class="bcls-section">
-      <h2 id="playerconfig">プレーヤー設定</h2>
+      <h2 id="playerconfig">プレーヤーの設定</h2>
 
       <p>まず、Multicast+ プラグインを使用するように Brightcove プレーヤーを設定します。希望のスキンとオプションで新しいプレーヤーを作成します。</p>
 
-      <p><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node18351-player-setup.png"/></p>
+      <p><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node18351-player-setup.png" /></p>
 
       <p>次に、Multicast+ Video.js プラグインを追加します。</p>
 
-      <p><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node18351-player-setup-plugins-javascript.png"/></p>
+      <p><img class="bcls-image--no-border" alt=""
+          src="https://img.brightcove.com/node18351-player-setup-plugins-javascript.png" /></p>
 
       <p>ここからコピー＆ペースト：</p>
 
@@ -462,11 +42,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
       <p>ただし、プレーヤは現在再生中の Brightcove メディアオブジェクトからマルチキャストアドレスを取得するのが理想的です。&nbsp;これは、プレーヤーが Omnicache サーバーまたは CDN からのストリームにフォールバックする必要がある場合に特に便利です。これは、元のストリーム URL がすでに存在するためです。&nbsp;プラグインオプションで「maddr」が指定されていない場合、プラグインは「multicastaddress」という名前のカスタムフィールドでマルチキャスト IP アドレスを探します。メディアオブジェクトにカスタムフィールド値を設定するには、Brightcove Studio でメディアオブジェクトを開き、[カスタムフィールド] セクションで [編集] をクリックします。</p>
 
-      <p><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node18351-customfield-metadata.png"/></p>
+      <p><img class="bcls-image--no-border" alt=""
+          src="https://img.brightcove.com/node18351-customfield-metadata.png" /></p>
 
-      <p>ユニキャスト/マルチキャストの混在環境では、[オプション] の [ &nbsp; omnicache] パラメーターを使用して、Multicast+ レシーバクライアントが再生デバイスで使用できない場合、またはマルチキャストストリームがネットワーク。</p>
+      <p>ユニキャスト/マルチキャストの混在環境では、Options の「omnicache」パラメータを使用して、Multicast+ レシーバクライアントが再生デバイスで使用できない場合、またはマルチキャストストリームが使用できない場合に、&nbsp;プレーヤーがフォールバックするオムニキャッシュサーバーを指定します。ネットワークのセグメント。</p>
 
-      <p><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node18351-player-setup-plugins-options.png"/></p>
+      <p><img class="bcls-image--no-border" alt=""
+          src="https://img.brightcove.com/node18351-player-setup-plugins-options.png" /></p>
 
       <p>ここからコピー＆ペースト：</p>
 
@@ -479,7 +61,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           &nbsp;&nbsp;&nbsp; "receiverHost": "hostname",<br />
           &nbsp;&nbsp;&nbsp; "allowHttpFallback": false,<br />
           &nbsp;&nbsp;&nbsp; "omnicache": "https://omnicache_backup_server"<br />
-          &nbsp; },&nbsp; </code><br/> <code class="language-json" translate="No">&nbsp; "verbose": true<br />
+          &nbsp; },&nbsp; </code><br />
+        <code class="language-json" translate="No">&nbsp; "verbose": true<br />
           }</code></p>
 
       <p class="line-numbers">&nbsp;</p>
@@ -487,216 +70,70 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <p>パラメータ定義:</p>
 
       <ul>
-        <li><strong>maddr </strong>፦ マルチキャストストリームアドレスとポート。&nbsp;このプラグインは、プレーヤープラグインで maddr をハードコーディングする代わりに使用できる「multicastaddress」カスタムフィールドを認識しています。</li>
-        <li><strong>AllowWhtpFallback </strong> : (デフォルトはfalse)-安全なページ上で安全でない受信機に接続しようとするからコードを防ぎます (状況によっては可能)</li>
-        <li><strong>keyStoreURI </strong> : (デフォルト「デフォルト」)-ロードするキーストアを探すのではなく、埋め込みキーストアを使用できるようにします</li>
-        <li><strong>ReceiverHost </strong> :「brightcove.multicast-receiver.altitude.net」-ローカルホストの認定された名前を提供します</li>
-        <li><strong>ReceiverType </strong> :「ネイティブ」-OSに固有の外部ファイルを探すのではなく、デフォルト設定を使用するようにコードを許可します</li>
-        <li><strong>minTime0 </strong> : 受信機のポーリングを、&nbsp;指定された秒数の 0 バイトの受信に制限します</li>
-        <li><strong>minTime1 </strong> : 受信機のポーリングを、3 の最初のセグメントを受信していない秒数に制限します。</li>
+        <li><strong>maddr</strong>፦ マルチキャストストリームアドレスとポート。&nbsp;このプラグインは、プレイヤープラグインで maddr をハードコーディングする代わりに使用できる「multicastaddress' カスタムフィールド」も認識しています。</li>
+        <li><strong>allowHttpFallback</strong> :（デフォルトは偽）-セキュアなページ上にあるときにコードが安全でない受信機に接続しようとするのを防ぎます（状況によっては可能）</li>
+        <li><strong>KeyStoreURI</strong> :（デフォルトの「デフォルト」）-ロードするキーストアを探すのではなく、埋め込みキーストアをコードで使用できるようにします。</li>
+        <li><strong>receiverHost</strong> :「brightcove.multicast-receiver.altitude.net」-ローカルホストの認定名を提供します</li>
+        <li><strong>receiverType</strong> :「native」-OSに固有の外部ファイルを検索するのではなく、コードがデフォルト設定を使用できるようにします。</li>
+        <li><strong>minTime0</strong> : 受信者のポーリングを、&nbsp;指定された秒数の 0 バイトの受信に制限します。</li>
+        <li><strong>minTime1</strong> : 受信者のポーリングを、3 の最初のセグメントを受信しなかった場合の、指定された秒数に制限します。</li>
         <li><strong>オムニキャッシュ</strong> :マルチキャストストリームが見つからない場合のオムニキャッシュバックアップサーバの URL</li>
       </ul>
     </section>
     <section class="bcls-section">
-      <h2 id="embed">Brightcove プレーヤーを埋め込む</h2>
+      <h2 id="embed">ブライトコーブプレーヤーを埋め込む</h2>
 
       <p>最後に、標準のプレーヤー公開プロセスを使用して、Brightcove プレーヤーを Web ページに埋め込みます。</p>
 
-      <p><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node18351-player-embed.png"/></p>
+      <p><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node18351-player-embed.png" /></p>
 
-      <p><br/> <img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node18351-player-embed_copy_code.png"/></p>
+      <p><br />
+        <img class="bcls-image--no-border" alt=""
+          src="https://img.brightcove.com/node18351-player-embed_copy_code.png" /></p>
     </section>
     <section class="bcls-section">
       <h2 id="liveworkflow">Multicast+ へのライブストリームマニフェストの提供</h2>
 
-      <p>エンタープライズネットワークでライブストリームをブロードキャストするには、Multicast+ は、Brightcove  CDN または内部ストリーミングサーバによって配信されるストリームマニフェスト URL を認識する必要があります。Brightcove Video Cloud でライブワークフローを使用する場合、ライブイベントがストリーミングを開始するまで、ストリームマニフェスト URL は認識されません。マニフェスト URL を Multicast+ に提供するには、ライブストリームを開始し、ストリームマニフェストをコピーし、Altimeter コンソールを使用して Multicast+ サーバーにストリームマニフェストを保存します。</p>
+      <p>エンタープライズネットワークでライブストリームをブロードキャストするには、Multicast+ は、ブライトコーブ CDN または内部ストリーミングサーバによって配信されるストリームマニフェスト URL を認識する必要があります。Brightcove Video Cloud でライブワークフローを使用する場合、ライブイベントがストリーミングを開始するまで、ストリームマニフェスト URL は認識されません。マニフェスト URL を Multicast+ に提供するには、ライブストリームを開始し、ストリームマニフェストをコピーし、Altimeter コンソールを使用して Multicast+ サーバーにストリームマニフェストを保存します。</p>
 
       <h3>ライブストリームを開始してストリームマニフェストを決定する</h3>
 
       <p>ストリームマニフェストを決定するには、まずライブイベントを作成します。ライブ配信を開始する日または数週間前にライブイベントを作成できます。その場合は、まず以下の手順の一部を完了し、後で残りの手順を完了します。</p>
 
-      <p><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node18351-live-event-create.png"/>
+      <p><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node18351-live-event-create.png" />
       </p>
 
       <p>Multicast+ が有効なプレーヤーではなく、デフォルトのプレーヤーを選択します。</p>
 
-      <p><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node18351-live-event-select-player.png"/></p>
+      <p><img class="bcls-image--no-border" alt=""
+          src="https://img.brightcove.com/node18351-live-event-select-player.png" /></p>
 
       <p>ライブ配信のプロフィールを選択します。</p>
 
-      <p><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node18351-live-event-select-rendition-profile.png"/></p>
+      <p><img class="bcls-image--no-border" alt=""
+          src="https://img.brightcove.com/node18351-live-event-select-rendition-profile.png" /></p>
 
       <p>HLS ストリームのマニフェスト URL を見つけやすくなるため、出力オプションに RTMP 形式のレンディションがないことを確認してください。</p>
 
-      <p><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node18351-live-event-remove-rtmp-rendition.png"/></p>
+      <p><img class="bcls-image--no-border" alt=""
+          src="https://img.brightcove.com/node18351-live-event-remove-rtmp-rendition.png" /></p>
 
       <p>ライブストリームのエンコーダを起動し、マニフェスト URL をコピーします。以下に示すように、QR コードの代わりにライブイベントプレビュープレーヤーが表示されている場合でも、RTMP 形式のレンディションが残っています。</p>
 
-      <p><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node18351-new-ticket-live-copy-manifest-hls-preview.png"/></p>
+      <p><img class="bcls-image--no-border" alt=""
+          src="https://img.brightcove.com/node18351-new-ticket-live-copy-manifest-hls-preview.png" /></p>
 
       <p>RTMP レンディションをライブストリームに保持する必要がある場合は、いつでもストリームの再生を開始し、ブラウザーデバッガーからマニフェスト URL を取得できます。これを行うには、プレーヤーの URL をコピーします。</p>
 
-      <p><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node18351-live-event-copy-player.png"/></p>
+      <p><img class="bcls-image--no-border" alt=""
+          src="https://img.brightcove.com/node18351-live-event-copy-player.png" /></p>
 
       <p>プレーヤーの URL をブラウザーの新しいタブに貼り付け、ブラウザーデバッガ (この例の Chrome) を開き、master.m3u8 HLS ストリームマニフェスト URL をコピーします。</p>
 
-      <p><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node18351-new-ticket-live-copy-manifest.png"/></p>
+      <p><img class="bcls-image--no-border" alt=""
+          src="https://img.brightcove.com/node18351-new-ticket-live-copy-manifest.png" /></p>
 
       <p>最後に、この Multicast+ <a target="_blank" href="https://files.brightcove.com/Altitude%20CDN_OmniCache_Brightcove_TechNote_v14.pdf">テクノテまたはその他の</a> Multicast+ および Altimeter マニュアルの指示に従って、ストリーム URL を使用して新しいブロードキャストを設定します。</p>
     </section>
 
 </article>
-<!-- complete bootstrap layout -->
-    </div>
-    <div class="col-sm-2 right-side-bar">
-      
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">ページコンテンツ</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
-      
-    </div>
-  </div>
-</div>
-
-<hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
-    <div class="region region-footer-top-center col-md-12">
-      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
-
-        <h2>Brightcove サポート</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://status.brightcove.com">システムステータス</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">サポートへのお問い合わせ</a>
-          </li>
-          <li>
-            <a href="https://support.brightcove.com/">ドキュメンテーション</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
-
-        <h2>トレーニング</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">オンラインコース</a>
-          </li>
-          <li>
-            <a href="https://studio.support.brightcove.com/training/register-training.html">コースに登録する</a>
-          </li>
-          <li>
-            <a href="https://university.brightcove.com/">Brightcove University</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
-
-        <h2>Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://www.brightcove.com">Brightcove.com</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">お問合せ</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <div class="row">
-    <div class="region region-footer-bottom-center col-md-12">
-      <div class="bcls-copyright footer-menu">
-        <table>
-          <tr>
-            <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
-            </td>
-            <td><a href="https://www.brightcove.com/en/legal/privacy">プライバシー</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">利用規約</a></td>
-            <td>
-              <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-      
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
-  
-
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
-  <script src="/assets/js/sites_nav.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
-  <script src="/assets/js/feedback.js"></script>
-  
-  <script src="/assets/js/sajari-search-foot.js"></script>
-  
-  <!-- <script src="/assets/js/sajari-index.js"></script> -->
-  <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
-    </style>
-
-</body>
-
-</html>
